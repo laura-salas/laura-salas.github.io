@@ -69,7 +69,10 @@
 *::after {
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: neoFont;
+  src: url("../assets/Cafeteria-Bold.otf");
+}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -12195,5 +12198,15 @@ textarea.form-control-lg {
   font-size: 2rem;
 }
 .navi_neopets{
-  background-image: url("assets/neopets_bg.png") !important;
+  background-image: url("../assets/neopets_bg.png") !important;
+  font-family: neoFont !important;
+  text-shadow: 0 0 3px #FFFFFF;
+}
+
+.neoFont{
+  font-family: neoFont !important;
+}
+
+h2 a {
+  text-decoration: none !important;
 }
