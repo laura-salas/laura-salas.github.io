@@ -1867,6 +1867,18 @@
     <p><span> </span></p>
     </div>
     </div>
+
+      <h1> Ton addresse IP est: <span id="ipp"></span></h1>
+
+      <script type="application/javascript">
+      var ipp;
+      function getIP(json) {
+        ipp = json.ip;
+        document.getElementById('ipp').innerHTML = ipp;
+      }
+      </script>
+      <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
 </body>
 
 </html>
