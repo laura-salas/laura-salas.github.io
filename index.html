@@ -289,13 +289,16 @@
               minutes = Math.floor((duration / (1000 * 60)) % 60),
               hours = Math.floor((duration / (1000 * 60 * 60)));
 
-          hours = (hours < 10) ? hours : hours;
-          minutes = (minutes < 10) ? minutes : minutes;
 
-
-          hours = (hours).toString();
-          min = (minutes).toString();
-          let timeDisplay = hours + " heure(s) et " + min + " minute(s)";
+          let timeDisplay = "";
+          if (hours >= 1){
+              timeDisplay = hours.toString() + " heure(s) et " + minutes.toString() + " minute(s)";
+          }
+          else {
+              timeDisplay = minutes.toString() + " minute(s)";
+              
+          }
+          
 
           return timeDisplay;
         }
@@ -306,7 +309,6 @@
           "situation-" + currSituation.toString();
 
           let grid = document.getElementsByClassName('grid')[0];
-          console.log(grid);
           grid.childNodes.forEach((line, i) => {
               // console.log("i:" + i);
               line.childNodes.forEach((col, j) => {
