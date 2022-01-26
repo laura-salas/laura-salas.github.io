@@ -32,6 +32,34 @@
                 </div>
             </div>
         </nav>
+
+        <div id="containur" class="container">
+            <h1> Notre avion de IFT1005 s'écrase-t-il? </h1>
+            <div class="grid">
+                <p class="line" id="line-1">
+                    <span class="one"><span class="empty"> </span></span>
+                    <span class="two"><span class="empty"> </span></span>
+                    <span class="three"><span class="empty"> </span></span>
+                </p>
+
+                <p class="line" id="line-2">
+                    <span class="one"><span class="empty"> </span></span>
+                    <span class="two"><span class="empty"> </span></span>
+                    <span class="three"><span class="empty"> </span></span>
+                </p>
+
+                <p class="line" id="line-3">
+                    <span class="one"><span class="empty"> </span></span>
+                    <span class="two"><span class="empty"> </span></span>
+                    <span class="three"><span class="empty"> d</span></span>
+                </p>
+            </div>
+
+            <h2> Statut: <span id="status">Safe</span>
+                <h3> Temps depuis dernier crash: <span id="time_since"></span>
+        </div>
+
+
         <!-- Header-->
         <header class="py-5">
             <div class="container px-lg-5">
@@ -58,6 +86,9 @@
                 </div>
             </div>
         </header>
+
+
+
         <!-- Page Content-->
         <section class="pt-4">
             <div class="container px-lg-5">
@@ -197,5 +228,108 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script type="text/javascript" src="state.json"></script>
+        <script>
+        const cloud = "&#9729;&#65039;";
+        const plane = "&#9992;&#65039;";
+        const thunderstorm = "&#127785;&#65039;";
+        const fire = "&#128293";
+        const sun = "&#127774;";
+        const empty = "   ";
+        const situationNames = [
+          "Tout va bien",
+          "Turbulance forte",
+          "Explosion totale"
+        ];
+
+        let currSituation = 1;
+
+        // attempt to get from url args; otherwise load json
+        let thisurl = window.location.search;
+        const urlParams = new URLSearchParams(thisurl);
+
+        currSituation = urlParams.get('etat') != null ?
+          urlParams.get('etat') :
+          (JSON.parse(data))[0].etat;
+        let dernierCrash = urlParams.get('dernierCrash') != null ?
+          urlParams.get('dernierCrash') :
+          (JSON.parse(data))[0].dernierCrash;
+
+        currSituation = currSituation < situationNames.length
+        && currSituation >= 0 ?
+          currSituation : 0;
+
+
+        let drawings = [
+          // "Tout va bien"
+          [
+              [cloud, cloud, sun],
+              [cloud, plane, cloud],
+              [cloud, cloud, cloud]
+          ],
+          // "Turbulance forte"
+          [
+              [thunderstorm, cloud, thunderstorm],
+              [thunderstorm, thunderstorm, plane],
+              [cloud, cloud, empty]
+          ],
+          // "Explosion totale"
+          [
+              [cloud, empty, cloud],
+              [fire, cloud, empty],
+              [plane, fire, fire]
+          ]
+        ];
+
+        function timeSince(lastTime) {
+          let duration = Date.now() - lastTime;
+          var milliseconds = Math.floor((duration % 1000) / 100),
+              seconds = Math.floor((duration / 1000) % 60),
+              minutes = Math.floor((duration / (1000 * 60)) % 60),
+              hours = Math.floor((duration / (1000 * 60 * 60)));
+
+          hours = (hours < 10) ? hours : hours;
+          minutes = (minutes < 10) ? minutes : minutes;
+
+
+          hours = (hours).toString();
+          min = (minutes).toString();
+          let timeDisplay = hours + " heure(s) et " + min + " minute(s)";
+
+          return timeDisplay;
+        }
+
+        function draw() {
+          // give the current situation type for style-based changes
+          document.getElementById('containur').className =
+          "situation-" + currSituation.toString();
+
+          let grid = document.getElementsByClassName('grid')[0];
+          console.log(grid);
+          grid.childNodes.forEach((line, i) => {
+              // console.log("i:" + i);
+              line.childNodes.forEach((col, j) => {
+                  // console.log( "j:" +j);
+                  col.childNodes.forEach(square => {
+                      // square.innerHTML = drawings[currSituation][i][j];
+                      square.innerHTML =
+                      drawings[currSituation][Math.floor(i / 2)][Math.floor(j / 2)];
+
+                      if (square.textContent == "✈️" || square.textContent == "🌞") {
+                          square.className = "big";
+                      }
+                  })
+              })
+          });
+
+          document.getElementById('status').innerHTML =
+          situationNames[currSituation];
+          document.getElementById('time_since').innerHTML =
+          timeSince(dernierCrash);
+        }
+        draw();
+
+        </script>
     </body>
 </html>

@@ -12210,3 +12210,64 @@ textarea.form-control-lg {
 h2 a {
   text-decoration: none !important;
 }
+
+
+#containur {
+  padding-top: 5vh;
+    text-align: center;
+    min-height: 45vh;
+    color: white;
+    cursor: url('https://i.imgur.com/zaizlHl.png'), auto !important;
+}
+
+#containur h1 {
+font-size: 3.5vh;
+}
+
+#containur h2 {
+    font-size: 3vh;
+}
+
+#containur h3 {
+    font-size: 2.5vh;
+}
+
+.situation-0 {
+    background-image: linear-gradient(0deg,
+      hsla(198, 80%, 40%, 1) 0%,
+      hsla(187, 100%, 82%, 1) 100%);
+}
+
+.situation-1 {
+  background: rgb(255,87,0);
+  background: linear-gradient(161deg,
+    rgba(255,87,0,1) 0%,
+    rgba(255,226,0,1) 100%);
+}
+
+.situation-2 {
+    background-image: linear-gradient(0deg,
+      hsla(25, 59%, 54%, 1) 0%,
+      hsla(0, 100%, 31%, 1) 100%);
+}
+
+.one,
+.two,
+.three {
+    font-size: 3vh;
+    margin: 10%;
+}
+
+#line-1 .two,
+#line-3 .two {
+    font-size: 2.2vh;
+}
+
+#line-2 .one,
+#line-2 .three {
+    font-size: 3.5vh;
+}
+
+.big {
+    font-size: 4.3vh;
+}
