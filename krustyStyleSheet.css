@@ -198,11 +198,11 @@ img.meme_ligne {
     color: rgb(255, 243, 110);
 }
 
-.ombrage-texte {
+.ombrage_texte {
     text-shadow: 2px 2px 4px black;
 }
 
-.brillance-texte {
+.brillance_texte {
     text-shadow: 0px 0px 7px rgb(48, 245, 226);
 }
 
