@@ -42,20 +42,6 @@ div {
     padding: 5%;
 }
 
-div p,
-div a,
-div ul,
-div ol,
-div span,
-div h1,
-div h2,
-div h3,
-div h4,
-div h5,
-div img {
-    padding: 5%;
-}
-
 .centre {
     margin: auto;
 }
