@@ -9,10 +9,22 @@
 
 body {
     height: 100vh;
-    padding: 2%;
+    max-width: 98%;
+    padding: 5%;
     background-size: cover;
     font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
+
+a {
+    color: rgb(48, 245, 226);
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: hotpink;
+    text-decoration: none;
+}
+
 /* titres */ 
 
 h1,
@@ -24,22 +36,10 @@ h6 {
     font-family: 'bob';
 }
 
-/* liens */
-
-a {
-    color: rgb(48, 245, 226);
-    text-decoration: none;
-}
-
-a:hover, a:active{
-    color: hotpink;
-    text-decoration: none;
-}
-
 /* divs */ 
 
 div {
-    margin: 5%;
+    padding: 5%;
 }
 
 div p,
