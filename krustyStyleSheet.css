@@ -16,12 +16,12 @@ body {
 }
 
 a {
-    color: rgb(48, 245, 226);
+    color: hotpink;
     text-decoration: none;
 }
 
 a:hover, a:active {
-    color: hotpink;
+    color: rgb(48, 245, 226);
     text-decoration: none;
 }
 
