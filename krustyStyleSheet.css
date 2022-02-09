@@ -36,6 +36,11 @@ h6 {
     font-family: 'bob';
 }
 
+
+h1.geant, p.geant{
+    font-size: 3em;
+}
+
 /* divs */ 
 
 div {
