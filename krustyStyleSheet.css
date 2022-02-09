@@ -24,6 +24,18 @@ h6 {
     font-family: 'bob';
 }
 
+/* liens */
+
+a {
+    color: rgb(48, 245, 226);
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    color: hotpink;
+    text-decoration: none;
+}
+
 /* divs */ 
 
 div {
