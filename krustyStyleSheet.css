@@ -226,7 +226,7 @@ p.mince {
     font-weight: 300;
 }
 
-p.spongebob {
+.spongebob {
     font-family: 'bob';
     background-image: url("https://i.pinimg.com/originals/ac/c4/4f/acc44fec183b5cd4324f868f2cc0092f.jpg");
     background-size: 75px 75px;
