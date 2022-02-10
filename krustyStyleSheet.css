@@ -210,6 +210,10 @@ img.meme_ligne {
     color: yellow;
 }
 
+p, li, span {
+    font-size: 1.25em;
+}
+
 p.justifier {
     text-align: justify;
     text-justify: inter-word;
@@ -229,7 +233,7 @@ p.mince {
 
 
 p.un_peu_plus_grand {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .spongebob {
