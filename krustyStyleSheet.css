@@ -210,7 +210,7 @@ img.meme_ligne {
     color: yellow;
 }
 
-p, li, span {
+td, th, p, li, span {
     font-size: 1.25em;
 }
 
@@ -243,4 +243,51 @@ p.un_peu_plus_grand {
     background-repeat: repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+
+/* table */
+
+/* Les bordures sont rejoignes plutot que de former des 
+    cases distinctes */
+table.bord_uni {
+    border-collapse: collapse;
+}
+
+
+/* Grossis toutes les cases de la table */
+table.lousse * {
+    padding: 1.5%;
+}
+
+
+/* tr */
+/* S'appliquent à toutes les cases de la rangée tr */
+
+tr.bord_mince * {
+    border-style: solid;
+    border-width: 1px;
+}
+
+tr.bord_moyen * {
+    border-style: solid;
+    border-width: 2px;
+}
+
+tr.bord_epais * {
+    border-style: solid;
+    border-width: 4px;
+}
+
+tr.bord_noir * {
+    border-color: black;
+}
+
+tr.bord_blanc * {
+    border-color: white;
+}
+
+
+tr.un_peu_plus_grand * {
+    font-size: 1.5em;
 }
