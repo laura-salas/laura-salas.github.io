@@ -1,0 +1,120 @@
+
+.background {
+	background-image: url(../assets/pattern-wood-grain.jpg);
+}
+
+.containerInfoPerso {
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 1rem!important;
+	box-sizing: border-box;
+	display: block;
+	background-image: url(../assets/pattern-leaves-green.jpg);
+}
+
+.info {
+	background-color: rgb(243, 234, 234);
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 0.5rem!important;
+	box-sizing: border-box;
+	display: block;
+}
+
+.info h1 {
+	text-align: center;
+	font-size: 64px;
+	color: #017069;
+	padding-bottom: 2%;
+}
+
+.info ul {
+	list-style-type: circle;
+}
+
+.info b {
+	font-weight: 700;
+}
+
+.imageDroite img {
+	width: 40%;
+	float: right;
+	margin-right: 5%;
+}
+
+.containerEducation {
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 1.5rem!important;
+	box-sizing: border-box;
+	display: block;
+	background-image: url(../assets/pattern-confetti-2x.jpg);
+	margin-left: 1.5rem!important;
+}
+
+.imageSousSection {
+	margin-top: 30px;
+	width: 100%;
+}
+
+.imageSousSection img {
+	width: 100%;
+	border-radius: .3rem!important;
+}
+
+.containerExperience {
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 1.5rem!important;
+	box-sizing: border-box;
+	display: block;
+	background-image: url(../assets/pattern-trees-2x.jpg);
+	margin-right: 1.5rem!important;
+}
+
+.containerExperience ul {
+	line-height: 1.88;
+}
+
+.containerphotoplage {
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 1.5rem!important;
+	box-sizing: border-box;
+	display: block;
+	margin-right: 1.5rem!important;
+	background-image: url(../assets/pattern-characters.jpg);
+}
+
+.containerphotobain {
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 2rem!important;
+	box-sizing: border-box;
+	display: block;
+	margin-right: 1.5rem!important;
+	background-image: url(../assets/pattern-leaves-white.jpg);
+}
+
+.containerDivers {
+	border-radius: .3rem!important;
+	padding: 3rem!important;
+	margin-bottom: 1.5rem!important;
+	box-sizing: border-box;
+	display: block;
+	margin-left: 1.5rem!important;
+	background-image: url(../assets/pattern-acorns-2x.jpg);
+}
+
+.imagePlage {
+	width: 100%;
+}
+
+.imagePlage img {
+	width: 100%;
+	border-radius: .3rem!important;
+}
+
+.sousliste ul {
+	list-style-type: square;
+}

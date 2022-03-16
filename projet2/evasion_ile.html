@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <title>TomNooK.com | Formule évasion Île Déserte</title>
+      <meta charset="UTF-8">
+      <!--Bootstrap CSS-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!--Nos CSS-->
+      <link rel="stylesheet" href="styles/stylesheet.css">
+      <link rel="stylesheet" href="styles/evasion_ile.css">
+      <link rel="shortcut icon" href="assets/face_nook.ico" type="image/x-icon">
+      <script src="generateurQuotes.js"></script>
+   </head>
+   <body>
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" href="bienvenue.html">
+         <img src="assets/face_nook.png" width="30" height="30" alt="">
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="evasion_ile.html">Évasion Île Déserte</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="QuiEstTomNook.html">Qui est Tom Nook</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Nos Partenaires
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item a-part" href="#">Nintendo</a>
+                     <a class="dropdown-item a-part" href="#">Banque de Montréal</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item a-part" href="#">Gouvernement du Japon</a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="nav-item button-and-briefcase">
+            <button class="btn btn-primary" type="button" onclick="location.href='Formulaire_Evasion.html'">Appliquer à l'Évasion</button>
+         </div>
+      </nav>
+      <div class="row">
+         <h1 id="forfait-beau">Nook a tout ce qu'il faut pour une belle escapade...</h1>
+      </div>
+      <!--Video background-->
+      <video autoplay muted loop id="vid_bg">
+         <source src="assets/background_beachy.mp4" type="video/mp4">
+      </video>
+      <!--Bouton prochaine section-->
+      <div class="row">
+         <div class="anchorboi" id="anchorHaut">Témoignages</div>
+      </div>
+      <a href="#temoignage-anchor">
+      <img src="assets/arrow_down.png" class="arrowy" alt=""/>
+      </a>
+      <div class="row"  id="temoignage-anchor">
+         <div id="temoignage-container" >
+            <div class="row">
+               <div class="col">
+                  <p id="temoignageText"></p>
+               </div>
+            </div>
+            <div class="row">
+               <img id="temo-img" src="/assets/char-1.png" alt="personnage">
+               <p id="nameContainer">
+                  — <span class="blueText"  id="temoignageName"></span>
+               </p>
+            </div>
+         </div>
+      </div>
+      <!--Bouton prochaine section-->
+      <div class="row">
+         <div class="anchorboi">Notre forfait en photos</div>
+      </div>
+      <a href="#photos-anchor">
+      <img src="assets/arrow_down.png" class="arrowy" alt=""/>
+      </a>
+      <div class="container" id="photos-anchor">
+         <div class="row">
+            <div class="col">
+               <div id="carouselExampleIndicators" class="carousel photo-frame slide carousel-fade" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner" data-interval="2000">
+                     <div class="carousel-item active">
+                        <img src="assets/thumbnail-acnh-create-tent.jpg" class="d-block w-100" alt="creation" >
+                     </div>
+                     <div class="carousel-item" data-interval="2000">
+                        <img src="assets/thumbnail-acnh-explore-decorating-4.jpg" class="d-block w-100" alt="decoration">
+                     </div>
+                     <div class="carousel-item" data-interval="2000">
+                        <img src="assets/thumbnail-acnh-create-bridge.jpg" class="d-block w-100" alt="pont">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col">
+               <img src="assets/thumbnail-acnh-explore-flower-garland.jpg" class="photo-frame" alt="image_ile" id="rotate-right">
+            </div>
+            <div class="col">
+               <img src="assets/thumbnail-acnh-explore-gardening.jpg" class="photo-frame" alt="image_ile" id="rotate-left">
+            </div>
+         </div>
+      </div>
+      <!--Bouton prochaine section-->
+      <div class="row">
+         <div class="anchorboi">Foire aux questions</div>
+      </div>
+      <a href="#en-quelques-mots">
+      <img src="assets/arrow_down.png" class="arrowy" alt=""/>
+      </a>
+      <div class="row" id="en-quelques-mots">
+         <div class="container">
+            <h1 id="foire">Foire aux questions</h1>
+            <div class="accordion" id="accordionExample">
+               <div class="card">
+                  <div class="card-header" id="headingOne">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Qu'est-ce que c'est ce forfait?
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                     <div class="card-body">
+                        Tom Nook a créé ce forfait en 2020 pour donner la chance à tous de créer sa propre île paradisiaque sur une île déserte débordante de possibilités. C'est l'occasion rêver de se faire de 
+                        nouveaux amis, d'apprendre de nouvelles choses ou de tout recommencer à zéro. <br>
+                        Remplissez le formulaire Forfait évasion pour faire une demande d'île!                  
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header" id="headingTwo">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Combien coûte ce forfait?
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                     <div class="card-body">
+                        Veuillez contacter M. Nook pour apprendre sur les multiples modules de paiement acceptés.
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header" id="headingThree">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Quelle est la politique d'annulation?
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                     <div class="card-body">
+                        Nous n'acceptons aucun échange ni aucune annulation. <br>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="bg-light text-center">
+         <div class="smooth">
+         </div>
+         <div class="container p-4">
+            <div class="row">
+               <div class="col-3">
+                  <img id="footery-img" src="assets/nook-inc.png" alt="">
+               </div>
+               <!--Emma: tes colonnes doivent s'additionner a 11-->
+               <div class="col-3 footer-item">
+                  <h5 class="text-uppercase mb-0">Site web de Tom Nook</h5>
+                  <p>Page faite par les fans #1 de M.Nook, Emma Gallifet et Laura Salas. Veuillez SVP les contacter pour tout intérêt d'affaires</p>
+               </div>
+               <div class="col-3 footer-item">
+                  <h5 class="text-uppercase mb-0">Menu</h5>
+                  <ul class="list-unstyled">
+                     <li>
+                        <a href="bienvenue.html" >Page intro</a>
+                     </li>
+                     <li>
+                        <a href="Formulaire_Evasion.html" >Forfait évasion île</a>
+                     </li>
+                     <li>
+                        <a href="QuiEstTomNook.html" >Qui est Tom Nook</a>
+                     </li>
+                     <li>
+                        <a href="Formulaire_Evasion.html" >Formulaire d'application</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="col-3 footer-item">
+                  <h5 class="text-uppercase mb-0">Réseaux Sociaux</h5>
+                  <ul class="list-unstyled">
+                     <li>
+                        <a href="#" >FaceNook</a>
+                     </li>
+                     <li>
+                        <a href="#" >Instabelle</a>
+                     </li>
+                     <li>
+                        <a href="#" >NookedIn</a>
+                     </li>
+                     <li>
+                        <a href="#" >SnapCat</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- <div class="col-2 offset-1" id="tree">
+                  <img src="assets/location-greenery-8.png">
+                  </div> -->
+            </div>
+         </div>
+         <div class="text-center p-3">
+            © 2021 Copiedroit: Gallifet-Salas & Filles
+         </div>
+      </footer>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <!--Enlever ceci avant de send le TP!!-->
+   </body>
+</html>
