@@ -1,584 +1,2416 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
 
-<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
-.mac-os-11 { --title-bar-height: 28px; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
-iframe { margin: auto; }
-a.url { word-break: break-all; }
-a:active, a:hover { outline: 0px; }
-.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
-#write.first-line-indent p { text-indent: 2em; }
-#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
-#write.first-line-indent li { margin-left: 2em; }
-.for-image #write { padding-left: 8px; padding-right: 8px; }
-body.typora-export { padding-left: 30px; padding-right: 30px; }
-.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
-.typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) { 
-  body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
-}
-#write li > figure:last-child { margin-bottom: 0.5rem; }
-#write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
-input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
-*, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
-p { orphans: 4; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
-.hidden { display: none; }
-.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
-#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
-thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
-table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
-.CodeMirror { text-align: left; }
-.CodeMirror-placeholder { opacity: 0.3; }
-.CodeMirror pre { padding: 0px 4px; }
-.CodeMirror-lines { padding: 0px; }
-div.hr:focus { cursor: none; }
-#write pre { white-space: pre-wrap; }
-#write.fences-no-line-wrapping pre { white-space: pre; }
-#write pre.ty-contain-cm { white-space: normal; }
-.CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
-.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-#write .md-fences.mock-cm { white-space: pre-wrap; }
-.md-fences.md-fences-with-lineno { padding-left: 0px; }
-#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
-.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
-.CodeMirror-line, twitterwidget { break-inside: avoid; }
-.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
-.footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
-li div { padding-top: 0px; }
-blockquote { margin: 1rem 0px; }
-li .mathjax-block, li p { margin: 0.5rem 0px; }
-li blockquote { margin: 1rem 0px; }
-li { margin: 0px; position: relative; }
-blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child, li > :first-child { margin-top: 0px; }
-.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
-#write .footnote-line { white-space: pre-wrap; }
-@media print { 
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
-  .typora-export #write { break-after: avoid; }
-  .typora-export #write::after { height: 0px; }
-  .is-mac table { break-inside: avoid; }
-  .typora-export-show-outline .typora-export-sidebar { display: none; }
-}
-.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
-a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
-p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
-#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
-p > .md-image:only-child { display: inline-block; width: 100%; }
-#write .MathJax_Display { margin: 0.8em 0px 0px; }
-.md-math-block { width: 100%; }
-.md-math-block:not(:empty)::after { display: none; }
-.MathJax_ref { fill: currentcolor; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
-.md-task-list-item { position: relative; list-style-type: none; }
-.task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
-.math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
-.md-toc-content { position: relative; margin-left: 0px; }
-.md-toc-content::after, .md-toc::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); }
-.md-toc-item a { text-decoration: none; }
-.md-toc-inner:hover { text-decoration: underline; }
-.md-toc-inner { display: inline-block; cursor: pointer; }
-.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
-.md-toc-h2 .md-toc-inner { margin-left: 2em; }
-.md-toc-h3 .md-toc-inner { margin-left: 4em; }
-.md-toc-h4 .md-toc-inner { margin-left: 6em; }
-.md-toc-h5 .md-toc-inner { margin-left: 8em; }
-.md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) { 
-  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
-  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
-  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
-  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
-}
-a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
-.footnote-line a:not(.reversefootnote) { color: inherit; }
-.md-attr { display: none; }
-.md-fn-count::after { content: "."; }
-code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
-.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg { max-width: 100%; }
-[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
-[lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom-width: 0px; }
-video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
-.highlight td, .highlight tr { border: 0px; }
-mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
-.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-.md-expand mark .md-meta { opacity: 0.3 !important; }
-mark .md-meta { color: rgb(0, 0, 0); }
-@media print { 
-  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
-}
-.md-diagram-panel .messageText { stroke: none !important; }
-.md-diagram-panel .start-state { fill: var(--node-fill); }
-.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
-.md-fences.md-fences-math { font-size: 1em; }
-.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
-.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
-.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
-.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
-.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) { 
-  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
-}
-@media screen and (max-width: 800px) { 
-  .typora-export-sidebar { display: none; }
-}
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
-.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
-.outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
-.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
-.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
-.outline-expander:hover::before { content: ""; }
-.outline-h1 > .outline-item { padding-left: 0px; }
-.outline-h2 > .outline-item { padding-left: 1em; }
-.outline-h3 > .outline-item { padding-left: 2em; }
-.outline-h4 > .outline-item { padding-left: 3em; }
-.outline-h5 > .outline-item { padding-left: 4em; }
-.outline-h6 > .outline-item { padding-left: 5em; }
-.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
-.outline-label:hover { text-decoration: underline; }
-.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
-.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
-.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
-.outline-children { display: none; }
-.info-panel-tab-wrapper { display: none; }
-.outline-item-open > .outline-children { display: block; }
-.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
-.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
-.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
-.typora-export-collapse-outline .outline-children { display: none; }
-.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
-.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
-.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
-.md-inline-math-container mjx-container { zoom: 0.95; }
+    <style type='text/css'>
+    html {
+        overflow-x: initial !important;
+    }
+
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --select-text-bg-color: #B5D6FC;
+        --select-text-font-color: auto;
+        --monospace: "Lucida Console", Consolas, "Courier", monospace;
+        --title-bar-height: 20px;
+    }
+
+    .mac-os-11 {
+        --title-bar-height: 28px;
+    }
+
+    html {
+        font-size: 14px;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: auto;
+        inset: 0px;
+        font-size: 1rem;
+        line-height: 1.42857143;
+        overflow-x: hidden;
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        tab-size: 4;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    iframe {
+        margin: auto;
+    }
+
+    a.url {
+        word-break: break-all;
+    }
+
+    a:active,
+    a:hover {
+        outline: 0px;
+    }
+
+    .in-text-selection,
+    ::selection {
+        text-shadow: none;
+        background: var(--select-text-bg-color);
+        color: var(--select-text-font-color);
+    }
+
+    #write {
+        margin: 0px auto;
+        height: auto;
+        width: inherit;
+        word-break: normal;
+        word-wrap: break-word;
+        position: relative;
+        white-space: normal;
+        overflow-x: visible;
+        padding-top: 36px;
+    }
+
+    #write.first-line-indent p {
+        text-indent: 2em;
+    }
+
+    #write.first-line-indent li p,
+    #write.first-line-indent p * {
+        text-indent: 0px;
+    }
+
+    #write.first-line-indent li {
+        margin-left: 2em;
+    }
+
+    .for-image #write {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    body.typora-export {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .typora-export .footnote-line,
+    .typora-export li,
+    .typora-export p {
+        white-space: pre-wrap;
+    }
+
+    .typora-export .task-list-item input {
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 500px) {
+        body.typora-export {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        #write {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .CodeMirror-sizer {
+            margin-left: 0px !important;
+        }
+
+        .CodeMirror-gutters {
+            display: none !important;
+        }
+    }
+
+    #write li>figure:last-child {
+        margin-bottom: 0.5rem;
+    }
+
+    #write ol,
+    #write ul {
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+        image-orientation: from-image;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        font-variant-caps: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        line-height: normal;
+        padding: 0px;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    #write h1,
+    #write h2,
+    #write h3,
+    #write h4,
+    #write h5,
+    #write h6,
+    #write p,
+    #write pre {
+        width: inherit;
+    }
+
+    #write h1,
+    #write h2,
+    #write h3,
+    #write h4,
+    #write h5,
+    #write h6,
+    #write p {
+        position: relative;
+    }
+
+    p {
+        line-height: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        break-after: avoid-page;
+        break-inside: avoid;
+        orphans: 4;
+    }
+
+    p {
+        orphans: 4;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .md-math-block,
+    .md-rawblock,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .md-blockmeta {
+        color: rgb(204, 204, 204);
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    sup.md-footnote {
+        padding: 2px 4px;
+        background-color: rgba(238, 238, 238, 0.7);
+        color: rgb(85, 85, 85);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        cursor: pointer;
+    }
+
+    sup.md-footnote a,
+    sup.md-footnote a:hover {
+        color: inherit;
+        text-transform: inherit;
+        text-decoration: inherit;
+    }
+
+    #write input[type="checkbox"] {
+        cursor: pointer;
+        width: inherit;
+        height: inherit;
+    }
+
+    figure {
+        overflow-x: auto;
+        margin: 1.2em 0px;
+        max-width: calc(100% + 16px);
+        padding: 0px;
+    }
+
+    figure>table {
+        margin: 0px;
+    }
+
+    tr {
+        break-inside: avoid;
+        break-after: auto;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        width: 100%;
+        overflow: auto;
+        break-inside: auto;
+        text-align: left;
+    }
+
+    table.md-table td {
+        min-width: 32px;
+    }
+
+    .CodeMirror-gutters {
+        border-right-width: 0px;
+        background-color: inherit;
+    }
+
+    .CodeMirror-linenumber {}
+
+    .CodeMirror {
+        text-align: left;
+    }
+
+    .CodeMirror-placeholder {
+        opacity: 0.3;
+    }
+
+    .CodeMirror pre {
+        padding: 0px 4px;
+    }
+
+    .CodeMirror-lines {
+        padding: 0px;
+    }
+
+    div.hr:focus {
+        cursor: none;
+    }
+
+    #write pre {
+        white-space: pre-wrap;
+    }
+
+    #write.fences-no-line-wrapping pre {
+        white-space: pre;
+    }
+
+    #write pre.ty-contain-cm {
+        white-space: normal;
+    }
+
+    .CodeMirror-gutters {
+        margin-right: 4px;
+    }
+
+    .md-fences {
+        font-size: 0.9rem;
+        display: block;
+        break-inside: avoid;
+        text-align: left;
+        overflow: visible;
+        white-space: pre;
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        position: relative !important;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    .md-fences-adv-panel {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 8px;
+        overflow-x: auto;
+    }
+
+    #write .md-fences.mock-cm {
+        white-space: pre-wrap;
+    }
+
+    .md-fences.md-fences-with-lineno {
+        padding-left: 0px;
+    }
+
+    #write.fences-no-line-wrapping .md-fences.mock-cm {
+        white-space: pre;
+        overflow-x: auto;
+    }
+
+    .md-fences.mock-cm.md-fences-with-lineno {
+        padding-left: 8px;
+    }
+
+    .CodeMirror-line,
+    twitterwidget {
+        break-inside: avoid;
+    }
+
+    .footnotes {
+        opacity: 0.8;
+        font-size: 0.9rem;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .footnotes+.footnotes {
+        margin-top: 0px;
+    }
+
+    .md-reset {
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        outline: 0px;
+        vertical-align: top;
+        text-decoration: none;
+        text-shadow: none;
+        float: none;
+        position: static;
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        cursor: inherit;
+        line-height: normal;
+        font-weight: 400;
+        text-align: left;
+        box-sizing: content-box;
+        direction: ltr;
+        background-position: 0px 0px;
+    }
+
+    li div {
+        padding-top: 0px;
+    }
+
+    blockquote {
+        margin: 1rem 0px;
+    }
+
+    li .mathjax-block,
+    li p {
+        margin: 0.5rem 0px;
+    }
+
+    li blockquote {
+        margin: 1rem 0px;
+    }
+
+    li {
+        margin: 0px;
+        position: relative;
+    }
+
+    blockquote> :last-child {
+        margin-bottom: 0px;
+    }
+
+    blockquote> :first-child,
+    li> :first-child {
+        margin-top: 0px;
+    }
+
+    .footnotes-area {
+        color: rgb(136, 136, 136);
+        margin-top: 0.714rem;
+        padding-bottom: 0.143rem;
+        white-space: normal;
+    }
+
+    #write .footnote-line {
+        white-space: pre-wrap;
+    }
+
+    @media print {
+
+        body,
+        html {
+            border: 1px solid transparent;
+            height: 99%;
+            break-after: avoid;
+            break-before: avoid;
+            font-variant-ligatures: no-common-ligatures;
+        }
+
+        #write {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-color: transparent !important;
+        }
+
+        .typora-export * {
+            -webkit-print-color-adjust: exact;
+        }
+
+        .typora-export #write {
+            break-after: avoid;
+        }
+
+        .typora-export #write::after {
+            height: 0px;
+        }
+
+        .is-mac table {
+            break-inside: avoid;
+        }
+
+        .typora-export-show-outline .typora-export-sidebar {
+            display: none;
+        }
+    }
+
+    .footnote-line {
+        margin-top: 0.714em;
+        font-size: 0.7em;
+    }
+
+    a img,
+    img a {
+        cursor: pointer;
+    }
+
+    pre.md-meta-block {
+        font-size: 0.8rem;
+        min-height: 0.8rem;
+        white-space: pre-wrap;
+        background-color: rgb(204, 204, 204);
+        display: block;
+        overflow-x: hidden;
+    }
+
+    p>.md-image:only-child:not(.md-img-error) img,
+    p>img:only-child {
+        display: block;
+        margin: auto;
+    }
+
+    #write.first-line-indent p>.md-image:only-child:not(.md-img-error) img {
+        left: -2em;
+        position: relative;
+    }
+
+    p>.md-image:only-child {
+        display: inline-block;
+        width: 100%;
+    }
+
+    #write .MathJax_Display {
+        margin: 0.8em 0px 0px;
+    }
+
+    .md-math-block {
+        width: 100%;
+    }
+
+    .md-math-block:not(:empty)::after {
+        display: none;
+    }
+
+    .MathJax_ref {
+        fill: currentcolor;
+    }
+
+    [contenteditable="true"]:active,
+    [contenteditable="true"]:focus,
+    [contenteditable="false"]:active,
+    [contenteditable="false"]:focus {
+        outline: 0px;
+        box-shadow: none;
+    }
+
+    .md-task-list-item {
+        position: relative;
+        list-style-type: none;
+    }
+
+    .task-list-item.md-task-list-item {
+        padding-left: 0px;
+    }
+
+    .md-task-list-item>input {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin-left: -1.2em;
+        margin-top: calc(1em - 10px);
+        border: none;
+    }
+
+    .math {
+        font-size: 1rem;
+    }
+
+    .md-toc {
+        min-height: 3.58rem;
+        position: relative;
+        font-size: 0.9rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .md-toc-content {
+        position: relative;
+        margin-left: 0px;
+    }
+
+    .md-toc-content::after,
+    .md-toc::after {
+        display: none;
+    }
+
+    .md-toc-item {
+        display: block;
+        color: rgb(65, 131, 196);
+    }
+
+    .md-toc-item a {
+        text-decoration: none;
+    }
+
+    .md-toc-inner:hover {
+        text-decoration: underline;
+    }
+
+    .md-toc-inner {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .md-toc-h1 .md-toc-inner {
+        margin-left: 0px;
+        font-weight: 700;
+    }
+
+    .md-toc-h2 .md-toc-inner {
+        margin-left: 2em;
+    }
+
+    .md-toc-h3 .md-toc-inner {
+        margin-left: 4em;
+    }
+
+    .md-toc-h4 .md-toc-inner {
+        margin-left: 6em;
+    }
+
+    .md-toc-h5 .md-toc-inner {
+        margin-left: 8em;
+    }
+
+    .md-toc-h6 .md-toc-inner {
+        margin-left: 10em;
+    }
+
+    @media screen and (max-width: 48em) {
+        .md-toc-h3 .md-toc-inner {
+            margin-left: 3.5em;
+        }
+
+        .md-toc-h4 .md-toc-inner {
+            margin-left: 5em;
+        }
+
+        .md-toc-h5 .md-toc-inner {
+            margin-left: 6.5em;
+        }
+
+        .md-toc-h6 .md-toc-inner {
+            margin-left: 8em;
+        }
+    }
+
+    a.md-toc-inner {
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    .footnote-line a:not(.reversefootnote) {
+        color: inherit;
+    }
+
+    .md-attr {
+        display: none;
+    }
+
+    .md-fn-count::after {
+        content: ".";
+    }
+
+    code,
+    pre,
+    samp,
+    tt {
+        font-family: var(--monospace);
+    }
+
+    kbd {
+        margin: 0px 0.1em;
+        padding: 0.1em 0.6em;
+        font-size: 0.8em;
+        color: rgb(36, 39, 41);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(173, 179, 185);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .md-comment {
+        color: rgb(162, 127, 3);
+        opacity: 0.6;
+        font-family: var(--monospace);
+    }
+
+    code {
+        text-align: left;
+    }
+
+    a.md-print-anchor {
+        white-space: pre !important;
+        border: none !important;
+        display: inline-block !important;
+        position: absolute !important;
+        width: 1px !important;
+        right: 0px !important;
+        outline: 0px !important;
+        text-shadow: initial !important;
+        background-position: 0px 0px !important;
+    }
+
+    .os-windows.monocolor-emoji .md-emoji {
+        font-family: "Segoe UI Symbol", sans-serif;
+    }
+
+    .md-diagram-panel>svg {
+        max-width: 100%;
+    }
+
+    [lang="flow"] svg,
+    [lang="mermaid"] svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    [lang="mermaid"] .node text {
+        font-size: 1rem;
+    }
+
+    table tr th {
+        border-bottom-width: 0px;
+    }
+
+    video {
+        max-width: 100%;
+        display: block;
+        margin: 0px auto;
+    }
+
+    iframe {
+        max-width: 100%;
+        width: 100%;
+        border: none;
+    }
+
+    .highlight td,
+    .highlight tr {
+        border: 0px;
+    }
+
+    mark {
+        background-color: rgb(255, 255, 0);
+        color: rgb(0, 0, 0);
+    }
+
+    .md-html-inline .md-plain,
+    .md-html-inline strong,
+    mark .md-inline-math,
+    mark strong {
+        color: inherit;
+    }
+
+    .md-expand mark .md-meta {
+        opacity: 0.3 !important;
+    }
+
+    mark .md-meta {
+        color: rgb(0, 0, 0);
+    }
+
+    @media print {
+
+        .typora-export h1,
+        .typora-export h2,
+        .typora-export h3,
+        .typora-export h4,
+        .typora-export h5,
+        .typora-export h6 {
+            break-inside: avoid;
+        }
+    }
+
+    .md-diagram-panel .messageText {
+        stroke: none !important;
+    }
+
+    .md-diagram-panel .start-state {
+        fill: var(--node-fill);
+    }
+
+    .md-diagram-panel .edgeLabel rect {
+        opacity: 1 !important;
+    }
+
+    .md-fences.md-fences-math {
+        font-size: 1em;
+    }
+
+    .md-fences-advanced:not(.md-focus) {
+        padding: 0px;
+        white-space: nowrap;
+        border: 0px;
+    }
+
+    .md-fences-advanced:not(.md-focus) {
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    .typora-export-show-outline .typora-export-content {
+        max-width: 1440px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .typora-export-sidebar {
+        width: 300px;
+        font-size: 0.8rem;
+        margin-top: 80px;
+        margin-right: 18px;
+    }
+
+    .typora-export-show-outline #write {
+        --webkit-flex: 2;
+        flex: 2 1 0%;
+    }
+
+    .typora-export-sidebar .outline-content {
+        position: fixed;
+        top: 0px;
+        max-height: 100%;
+        overflow: hidden auto;
+        padding-bottom: 30px;
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        .typora-export-sidebar,
+        .typora-export-sidebar .outline-content {
+            width: 240px;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .typora-export-sidebar {
+            display: none;
+        }
+    }
+
+    .outline-content li,
+    .outline-content ul {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        list-style: none;
+    }
+
+    .outline-content ul {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .outline-content strong {
+        font-weight: 400;
+    }
+
+    .outline-expander {
+        width: 1rem;
+        height: 1.428571429rem;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        cursor: pointer;
+        padding-left: 4px;
+    }
+
+    .outline-expander::before {
+        content: "";
+        position: relative;
+        font-family: Ionicons;
+        display: inline-block;
+        font-size: 8px;
+        vertical-align: middle;
+    }
+
+    .outline-item {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        cursor: pointer;
+    }
+
+    .outline-expander:hover::before {
+        content: "";
+    }
+
+    .outline-h1>.outline-item {
+        padding-left: 0px;
+    }
+
+    .outline-h2>.outline-item {
+        padding-left: 1em;
+    }
+
+    .outline-h3>.outline-item {
+        padding-left: 2em;
+    }
+
+    .outline-h4>.outline-item {
+        padding-left: 3em;
+    }
+
+    .outline-h5>.outline-item {
+        padding-left: 4em;
+    }
+
+    .outline-h6>.outline-item {
+        padding-left: 5em;
+    }
+
+    .outline-label {
+        cursor: pointer;
+        display: table-cell;
+        vertical-align: middle;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .outline-label:hover {
+        text-decoration: underline;
+    }
+
+    .outline-item:hover {
+        border-color: rgb(245, 245, 245);
+        background-color: var(--item-hover-bg-color);
+    }
+
+    .outline-item:hover {
+        margin-left: -28px;
+        margin-right: -28px;
+        border-left-width: 28px;
+        border-left-style: solid;
+        border-left-color: transparent;
+        border-right-width: 28px;
+        border-right-style: solid;
+        border-right-color: transparent;
+    }
+
+    .outline-item-single .outline-expander::before,
+    .outline-item-single .outline-expander:hover::before {
+        display: none;
+    }
+
+    .outline-item-open>.outline-item>.outline-expander::before {
+        content: "";
+    }
+
+    .outline-children {
+        display: none;
+    }
+
+    .info-panel-tab-wrapper {
+        display: none;
+    }
+
+    .outline-item-open>.outline-children {
+        display: block;
+    }
+
+    .typora-export .outline-item {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    .typora-export .outline-item:hover {
+        margin-right: -8px;
+        border-right-width: 8px;
+        border-right-style: solid;
+        border-right-color: transparent;
+    }
+
+    .typora-export .outline-expander::before {
+        content: "+";
+        font-family: inherit;
+        top: -1px;
+    }
+
+    .typora-export .outline-expander:hover::before,
+    .typora-export .outline-item-open>.outline-item>.outline-expander::before {
+        content: "−";
+    }
+
+    .typora-export-collapse-outline .outline-children {
+        display: none;
+    }
+
+    .typora-export-collapse-outline .outline-item-open>.outline-children,
+    .typora-export-no-collapse-outline .outline-children {
+        display: block;
+    }
+
+    .typora-export-no-collapse-outline .outline-expander::before {
+        content: "" !important;
+    }
+
+    .typora-export-show-outline .outline-item-active>.outline-item .outline-label {
+        font-weight: 700;
+    }
+
+    .md-inline-math-container mjx-container {
+        zoom: 0.95;
+    }
 
 
-.CodeMirror { height: auto; }
-.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
-.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
-.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
-.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit; background-repeat: inherit; }
-.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
-.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
-.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
-.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
-.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
-.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
-.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
-.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
-.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
-.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
-.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
-.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
-.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
-.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
-.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
-.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
-.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
-.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
-.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
-.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
-.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
-.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
-.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
-.cm-negative { color: rgb(221, 68, 68); }
-.cm-positive { color: rgb(34, 153, 34); }
-.cm-header, .cm-strong { font-weight: 700; }
-.cm-del { text-decoration: line-through; }
-.cm-em { font-style: italic; }
-.cm-link { text-decoration: underline; }
-.cm-error { color: red; }
-.cm-invalidchar { color: red; }
-.cm-constant { color: rgb(38, 139, 210); }
-.cm-defined { color: rgb(181, 137, 0); }
-div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
-.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
-.CodeMirror { position: relative; overflow: hidden; }
-.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
-.CodeMirror-sizer { position: relative; }
-.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
-.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
-.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
-.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
-.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
-.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
-.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
-.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; }
-.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
-.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
-.CodeMirror-lines { cursor: text; }
-.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
-.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
-.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
-.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
-.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
-.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
-.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
-.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
-.CodeMirror-measure pre { position: static; }
-.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
-.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
-.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
-.cm-searching { background-color: rgba(255, 255, 0, 0.4); }
-span.cm-underlined { text-decoration: underline; }
-span.cm-strikethrough { text-decoration: line-through; }
-.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
-.cm-tw-deleted { text-decoration: line-through; }
-.cm-tw-header5 { font-weight: 700; }
-.cm-tw-listitem:first-child { padding-left: 10px; }
-.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
-.cm-tw-underline { text-decoration: underline; }
-@media print { 
-  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
-}
+    .CodeMirror {
+        height: auto;
+    }
+
+    .CodeMirror.cm-s-inner {
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    .CodeMirror-scroll {
+        overflow: auto hidden;
+        z-index: 3;
+    }
+
+    .CodeMirror-gutter-filler,
+    .CodeMirror-scrollbar-filler {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .CodeMirror-gutters {
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgb(221, 221, 221);
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        white-space: nowrap;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    .CodeMirror-linenumber {
+        padding: 0px 3px 0px 5px;
+        text-align: right;
+        color: rgb(153, 153, 153);
+    }
+
+    .cm-s-inner .cm-keyword {
+        color: rgb(119, 0, 136);
+    }
+
+    .cm-s-inner .cm-atom,
+    .cm-s-inner.cm-atom {
+        color: rgb(34, 17, 153);
+    }
+
+    .cm-s-inner .cm-number {
+        color: rgb(17, 102, 68);
+    }
+
+    .cm-s-inner .cm-def {
+        color: rgb(0, 0, 255);
+    }
+
+    .cm-s-inner .cm-variable {
+        color: rgb(0, 0, 0);
+    }
+
+    .cm-s-inner .cm-variable-2 {
+        color: rgb(0, 85, 170);
+    }
+
+    .cm-s-inner .cm-variable-3 {
+        color: rgb(0, 136, 85);
+    }
+
+    .cm-s-inner .cm-string {
+        color: rgb(170, 17, 17);
+    }
+
+    .cm-s-inner .cm-property {
+        color: rgb(0, 0, 0);
+    }
+
+    .cm-s-inner .cm-operator {
+        color: rgb(152, 26, 26);
+    }
+
+    .cm-s-inner .cm-comment,
+    .cm-s-inner.cm-comment {
+        color: rgb(170, 85, 0);
+    }
+
+    .cm-s-inner .cm-string-2 {
+        color: rgb(255, 85, 0);
+    }
+
+    .cm-s-inner .cm-meta {
+        color: rgb(85, 85, 85);
+    }
+
+    .cm-s-inner .cm-qualifier {
+        color: rgb(85, 85, 85);
+    }
+
+    .cm-s-inner .cm-builtin {
+        color: rgb(51, 0, 170);
+    }
+
+    .cm-s-inner .cm-bracket {
+        color: rgb(153, 153, 119);
+    }
+
+    .cm-s-inner .cm-tag {
+        color: rgb(17, 119, 0);
+    }
+
+    .cm-s-inner .cm-attribute {
+        color: rgb(0, 0, 204);
+    }
+
+    .cm-s-inner .cm-header,
+    .cm-s-inner.cm-header {
+        color: rgb(0, 0, 255);
+    }
+
+    .cm-s-inner .cm-quote,
+    .cm-s-inner.cm-quote {
+        color: rgb(0, 153, 0);
+    }
+
+    .cm-s-inner .cm-hr,
+    .cm-s-inner.cm-hr {
+        color: rgb(153, 153, 153);
+    }
+
+    .cm-s-inner .cm-link,
+    .cm-s-inner.cm-link {
+        color: rgb(0, 0, 204);
+    }
+
+    .cm-negative {
+        color: rgb(221, 68, 68);
+    }
+
+    .cm-positive {
+        color: rgb(34, 153, 34);
+    }
+
+    .cm-header,
+    .cm-strong {
+        font-weight: 700;
+    }
+
+    .cm-del {
+        text-decoration: line-through;
+    }
+
+    .cm-em {
+        font-style: italic;
+    }
+
+    .cm-link {
+        text-decoration: underline;
+    }
+
+    .cm-error {
+        color: red;
+    }
+
+    .cm-invalidchar {
+        color: red;
+    }
+
+    .cm-constant {
+        color: rgb(38, 139, 210);
+    }
+
+    .cm-defined {
+        color: rgb(181, 137, 0);
+    }
+
+    div.CodeMirror span.CodeMirror-matchingbracket {
+        color: rgb(0, 255, 0);
+    }
+
+    div.CodeMirror span.CodeMirror-nonmatchingbracket {
+        color: rgb(255, 34, 34);
+    }
+
+    .cm-s-inner .CodeMirror-activeline-background {
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    .CodeMirror {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .CodeMirror-scroll {
+        height: 100%;
+        outline: 0px;
+        position: relative;
+        box-sizing: content-box;
+        background-image: inherit;
+        background-size: inherit;
+        background-attachment: inherit;
+        background-origin: inherit;
+        background-clip: inherit;
+        background-color: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+    .CodeMirror-sizer {
+        position: relative;
+    }
+
+    .CodeMirror-gutter-filler,
+    .CodeMirror-hscrollbar,
+    .CodeMirror-scrollbar-filler,
+    .CodeMirror-vscrollbar {
+        position: absolute;
+        z-index: 6;
+        display: none;
+        outline: 0px;
+    }
+
+    .CodeMirror-vscrollbar {
+        right: 0px;
+        top: 0px;
+        overflow: hidden;
+    }
+
+    .CodeMirror-hscrollbar {
+        bottom: 0px;
+        left: 0px;
+        overflow: auto hidden;
+    }
+
+    .CodeMirror-scrollbar-filler {
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .CodeMirror-gutter-filler {
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .CodeMirror-gutters {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding-bottom: 10px;
+        z-index: 3;
+        overflow-y: hidden;
+    }
+
+    .CodeMirror-gutter {
+        white-space: normal;
+        height: 100%;
+        box-sizing: content-box;
+        padding-bottom: 30px;
+        margin-bottom: -32px;
+        display: inline-block;
+    }
+
+    .CodeMirror-gutter-wrapper {
+        position: absolute;
+        z-index: 4;
+        border: none !important;
+        background-position: 0px 0px !important;
+    }
+
+    .CodeMirror-gutter-background {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        z-index: 4;
+    }
+
+    .CodeMirror-gutter-elt {
+        position: absolute;
+        cursor: default;
+        z-index: 4;
+    }
+
+    .CodeMirror-lines {
+        cursor: text;
+    }
+
+    .CodeMirror pre {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-width: 0px;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0px;
+        white-space: pre;
+        word-wrap: normal;
+        color: inherit;
+        z-index: 2;
+        position: relative;
+        overflow: visible;
+        background-position: 0px 0px;
+    }
+
+    .CodeMirror-wrap pre {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        word-break: normal;
+    }
+
+    .CodeMirror-code pre {
+        border-right-width: 30px;
+        border-right-style: solid;
+        border-right-color: transparent;
+        width: fit-content;
+    }
+
+    .CodeMirror-wrap .CodeMirror-code pre {
+        border-right-style: none;
+        width: auto;
+    }
+
+    .CodeMirror-linebackground {
+        position: absolute;
+        inset: 0px;
+        z-index: 0;
+    }
+
+    .CodeMirror-linewidget {
+        position: relative;
+        z-index: 2;
+        overflow: auto;
+    }
+
+    .CodeMirror-wrap .CodeMirror-scroll {
+        overflow-x: hidden;
+    }
+
+    .CodeMirror-measure {
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    .CodeMirror-measure pre {
+        position: static;
+    }
+
+    .CodeMirror div.CodeMirror-cursor {
+        position: absolute;
+        visibility: hidden;
+        border-right-style: none;
+        width: 0px;
+    }
+
+    .CodeMirror div.CodeMirror-cursor {
+        visibility: hidden;
+    }
+
+    .CodeMirror-focused div.CodeMirror-cursor {
+        visibility: inherit;
+    }
+
+    .cm-searching {
+        background-color: rgba(255, 255, 0, 0.4);
+    }
+
+    span.cm-underlined {
+        text-decoration: underline;
+    }
+
+    span.cm-strikethrough {
+        text-decoration: line-through;
+    }
+
+    .cm-tw-syntaxerror {
+        color: rgb(255, 255, 255);
+        background-color: rgb(153, 0, 0);
+    }
+
+    .cm-tw-deleted {
+        text-decoration: line-through;
+    }
+
+    .cm-tw-header5 {
+        font-weight: 700;
+    }
+
+    .cm-tw-listitem:first-child {
+        padding-left: 10px;
+    }
+
+    .cm-tw-box {
+        border-style: solid;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-color: inherit;
+        border-top-width: 0px !important;
+    }
+
+    .cm-tw-underline {
+        text-decoration: underline;
+    }
+
+    @media print {
+        .CodeMirror div.CodeMirror-cursor {
+            visibility: hidden;
+        }
+    }
 
 
-html {
-	font-size: 19px;
-}
+    html {
+        font-size: 19px;
+    }
 
-html, body {
-	margin: auto;
-	background: #fefefe;
-	-webkit-font-smoothing: antialiased;
-}
-body {
-	font-family: "Vollkorn", Palatino, Times;
-	color: #333;
-	line-height: 1.4;
-	text-align: justify;
-}
+    html,
+    body {
+        margin: auto;
+        background: #fefefe;
+        -webkit-font-smoothing: antialiased;
+    }
 
-#write {
-	max-width: 960px;
-	margin: 0 auto;
-	margin-bottom: 2em;
-	line-height: 1.53;
-	padding-top: 40px;
-}
+    body {
+        font-family: "Vollkorn", Palatino, Times;
+        color: #333;
+        line-height: 1.4;
+        text-align: justify;
+    }
 
-@media only screen and (min-width: 1400px) {
-	#write {
-		max-width: 1100px;
-	}
-}
+    #write {
+        max-width: 960px;
+        margin: 0 auto;
+        margin-bottom: 2em;
+        line-height: 1.53;
+        padding-top: 40px;
+    }
 
-@media print {
-	html {
-		font-size: 13px;
-	}
-}
+    @media only screen and (min-width: 1400px) {
+        #write {
+            max-width: 1100px;
+        }
+    }
 
-/* Typography
+    @media print {
+        html {
+            font-size: 13px;
+        }
+    }
+
+    /* Typography
 -------------------------------------------------------- */
 
-#write>h1:first-child,
-h1 {
-	margin-top: 1.6em;
-	font-weight: normal;
-}
+    #write>h1:first-child,
+    h1 {
+        margin-top: 1.6em;
+        font-weight: normal;
+    }
 
-h1 {
-	font-size:3em;
-}
+    h1 {
+        font-size: 3em;
+    }
 
-h2 {
-	margin-top:2em;
-	font-weight: normal;
-}
+    h2 {
+        margin-top: 2em;
+        font-weight: normal;
+    }
 
-h3 {
-	font-weight: normal;
-	font-style: italic;
-	margin-top: 3em;
-}
+    h3 {
+        font-weight: normal;
+        font-style: italic;
+        margin-top: 3em;
+    }
 
-h1, 
-h2, 
-h3{
-	text-align: center;
-}
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+    }
 
-h2:after{
-	border-bottom: 1px solid #2f2f2f;
-    content: '';
-    width: 100px;
-    display: block;
-    margin: 0 auto;
-    height: 1px;
-}
+    h2:after {
+        border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+        height: 1px;
+    }
 
-h1+h2, h2+h3 {
-	margin-top: 0.83em;
-}
+    h1+h2,
+    h2+h3 {
+        margin-top: 0.83em;
+    }
 
-p,
-.mathjax-block {
-	margin-top: 0;
-	-webkit-hypens: auto;
-	-moz-hypens: auto;
-	hyphens: auto;
-}
-ul {
-	list-style: square;
-	padding-left: 1.2em;
-}
-ol {
-	padding-left: 1.2em;
-}
-blockquote {
-	margin-left: 1em;
-	padding-left: 1em;
-	border-left: 1px solid #ddd;
-}
-code,
-pre {
-	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
-	font-size: .9em;
-	background: white;
-}
-.md-fences{
-	margin-left: 1em;
-	padding-left: 1em;
-	border: 1px solid #ddd;
-	padding-bottom: 8px;
-	padding-top: 6px;
-	margin-bottom: 1.5em;
-}
+    p,
+    .mathjax-block {
+        margin-top: 0;
+        -webkit-hypens: auto;
+        -moz-hypens: auto;
+        hyphens: auto;
+    }
 
-a {
-	color: #2484c1;
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-}
-a img {
-	border: none;
-}
-h1 a,
-h1 a:hover {
-	color: #333;
-	text-decoration: none;
-}
-hr {
-	color: #ddd;
-	height: 1px;
-	margin: 2em 0;
-	border-top: solid 1px #ddd;
-	border-bottom: none;
-	border-left: 0;
-	border-right: 0;
-}
-.ty-table-edit {
-	background: #ededed;
-    padding-top: 4px;
-}
-table {
-	margin-bottom: 1.333333rem
-}
-table th,
-table td {
-	padding: 8px;
-	line-height: 1.333333rem;
-	vertical-align: top;
-	border-top: 1px solid #ddd
-}
-table th {
-	font-weight: bold
-}
-table thead th {
-	vertical-align: bottom
-}
-table caption+thead tr:first-child th,
-table caption+thead tr:first-child td,
-table colgroup+thead tr:first-child th,
-table colgroup+thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-	border-top: 0
-}
-table tbody+tbody {
-	border-top: 2px solid #ddd
-}
+    ul {
+        list-style: square;
+        padding-left: 1.2em;
+    }
 
-.task-list{
-	padding:0;
-}
+    ol {
+        padding-left: 1.2em;
+    }
 
-.md-task-list-item {
-	padding-left: 1.6rem;
-}
+    blockquote {
+        margin-left: 1em;
+        padding-left: 1em;
+        border-left: 1px solid #ddd;
+    }
 
-.md-task-list-item > input:before {
-	content: '\221A';
-	display: inline-block;
-	width: 1.33333333rem;
-  	height: 1.6rem;
-	vertical-align: middle;
-	text-align: center;
-	color: #ddd;
-	background-color: #fefefe;
-}
+    code,
+    pre {
+        font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+        font-size: .9em;
+        background: white;
+    }
 
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
-	color: inherit;
-}
-.md-tag {
-	color: inherit;
-	font: inherit;
-}
-#write pre.md-meta-block {
-	min-height: 35px;
-	padding: 0.5em 1em;
-}
-#write pre.md-meta-block {
-	white-space: pre;
-	background: #f8f8f8;
-	border: 0px;
-	color: #999;
-	
-	width: 100vw;
-	max-width: calc(100% + 60px);
-	margin-left: -30px;
-	border-left: 30px #f8f8f8 solid;
-	border-right: 30px #f8f8f8 solid;
+    .md-fences {
+        margin-left: 1em;
+        padding-left: 1em;
+        border: 1px solid #ddd;
+        padding-bottom: 8px;
+        padding-top: 6px;
+        margin-bottom: 1.5em;
+    }
 
-	margin-bottom: 2em;
-	margin-top: -1.3333333333333rem;
-	padding-top: 26px;
-	padding-bottom: 10px;
-	line-height: 1.8em;
-	font-size: 0.9em;
-	font-size: 0.76em;
-	padding-left: 0;
-}
-.md-img-error.md-image>.md-meta{
-	vertical-align: bottom;
-}
-#write>h5.md-focus:before {
-	top: 2px;
-}
+    a {
+        color: #2484c1;
+        text-decoration: none;
+    }
 
-.md-toc {
-	margin-top: 40px;
-}
+    a:hover {
+        text-decoration: underline;
+    }
 
-.md-toc-content {
-	padding-bottom: 20px;
-}
+    a img {
+        border: none;
+    }
 
-.outline-expander:before {
-	color: inherit;
-	font-size: 14px;
-	top: auto;
-	content: "\f0da";
-	font-family: FontAwesome;
-}
+    h1 a,
+    h1 a:hover {
+        color: #333;
+        text-decoration: none;
+    }
 
-.outline-expander:hover:before,
-.outline-item-open>.outline-item>.outline-expander:before {
-  	content: "\f0d7";
-}
+    hr {
+        color: #ddd;
+        height: 1px;
+        margin: 2em 0;
+        border-top: solid 1px #ddd;
+        border-bottom: none;
+        border-left: 0;
+        border-right: 0;
+    }
 
-/** source code mode */
-#typora-source {
-	font-family: Courier, monospace;
-    color: #6A6A6A;
-}
+    .ty-table-edit {
+        background: #ededed;
+        padding-top: 4px;
+    }
 
-.html-for-mac #typora-sidebar {
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-}
+    table {
+        margin-bottom: 1.333333rem
+    }
 
-.cm-s-typora-default .cm-header, 
-.cm-s-typora-default .cm-property,
-.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
-	color: #428bca;
-}
+    table th,
+    table td {
+        padding: 8px;
+        line-height: 1.333333rem;
+        vertical-align: top;
+        border-top: 1px solid #ddd
+    }
 
-.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
-	color: #777777;
-}
+    table th {
+        font-weight: bold
+    }
 
-.typora-node .file-list-item-parent-loc, 
-.typora-node .file-list-item-time, 
-.typora-node .file-list-item-summary {
-	font-family: arial, sans-serif;
-}
+    table thead th {
+        vertical-align: bottom
+    }
 
-.md-task-list-item>input {
-    margin-left: -1.3em;
-    margin-top: calc(1rem - 12px);
-}
+    table caption+thead tr:first-child th,
+    table caption+thead tr:first-child td,
+    table colgroup+thead tr:first-child th,
+    table colgroup+thead tr:first-child td,
+    table thead:first-child tr:first-child th,
+    table thead:first-child tr:first-child td {
+        border-top: 0
+    }
 
-.md-mathjax-midline {
-	background: #fafafa;
-}
+    table tbody+tbody {
+        border-top: 2px solid #ddd
+    }
 
-.md-fences .code-tooltip {
-	bottom: -2em !important;
-}
+    .task-list {
+        padding: 0;
+    }
 
-.dropdown-menu .divider {
-	border-color: #e5e5e5;
-}
+    .md-task-list-item {
+        padding-left: 1.6rem;
+    }
 
- @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
-</style><title>demo_template</title>
+    .md-task-list-item>input:before {
+        content: '\221A';
+        display: inline-block;
+        width: 1.33333333rem;
+        height: 1.6rem;
+        vertical-align: middle;
+        text-align: center;
+        color: #ddd;
+        background-color: #fefefe;
+    }
+
+    .md-task-list-item>input:checked:before,
+    .md-task-list-item>input[checked]:before {
+        color: inherit;
+    }
+
+    .md-tag {
+        color: inherit;
+        font: inherit;
+    }
+
+    #write pre.md-meta-block {
+        min-height: 35px;
+        padding: 0.5em 1em;
+    }
+
+    #write pre.md-meta-block {
+        white-space: pre;
+        background: #f8f8f8;
+        border: 0px;
+        color: #999;
+
+        width: 100vw;
+        max-width: calc(100% + 60px);
+        margin-left: -30px;
+        border-left: 30px #f8f8f8 solid;
+        border-right: 30px #f8f8f8 solid;
+
+        margin-bottom: 2em;
+        margin-top: -1.3333333333333rem;
+        padding-top: 26px;
+        padding-bottom: 10px;
+        line-height: 1.8em;
+        font-size: 0.9em;
+        font-size: 0.76em;
+        padding-left: 0;
+    }
+
+    .md-img-error.md-image>.md-meta {
+        vertical-align: bottom;
+    }
+
+    #write>h5.md-focus:before {
+        top: 2px;
+    }
+
+    .md-toc {
+        margin-top: 40px;
+    }
+
+    .md-toc-content {
+        padding-bottom: 20px;
+    }
+
+    .outline-expander:before {
+        color: inherit;
+        font-size: 14px;
+        top: auto;
+        content: "\f0da";
+        font-family: FontAwesome;
+    }
+
+    .outline-expander:hover:before,
+    .outline-item-open>.outline-item>.outline-expander:before {
+        content: "\f0d7";
+    }
+
+    /** source code mode */
+    #typora-source {
+        font-family: Courier, monospace;
+        color: #6A6A6A;
+    }
+
+    .html-for-mac #typora-sidebar {
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+
+    .cm-s-typora-default .cm-header,
+    .cm-s-typora-default .cm-property,
+    .CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+        color: #428bca;
+    }
+
+    .cm-s-typora-default .cm-atom,
+    .cm-s-typora-default .cm-number {
+        color: #777777;
+    }
+
+    .typora-node .file-list-item-parent-loc,
+    .typora-node .file-list-item-time,
+    .typora-node .file-list-item-summary {
+        font-family: arial, sans-serif;
+    }
+
+    .md-task-list-item>input {
+        margin-left: -1.3em;
+        margin-top: calc(1rem - 12px);
+    }
+
+    .md-mathjax-midline {
+        background: #fafafa;
+    }
+
+    .md-fences .code-tooltip {
+        bottom: -2em !important;
+    }
+
+    .dropdown-menu .divider {
+        border-color: #e5e5e5;
+    }
+
+    @media print {
+        @page {
+            margin: 0 0 0 0;
+        }
+
+        body.typora-export {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #write {
+            padding: 0;
+        }
+    }
+    </style>
+    <title>Demo 6</title>
 </head>
-<body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='https://laura-salas.github.io/laura-salas.github.io'><span>← Revenir vers le homepage</span></a></p><h1 id='demo-6'><span>Demo 6</span></h1><h1 id='exercice-de-la-semaine'><span>Exercice de la semaine</span></h1><p><span>Devoir dispo plus tard aujourd&#39;hui! </span></p><h1 id='à-propos-des-éditeurs-de-texte-encore'><span>À propos des éditeurs de texte: encore</span></h1><p><a href='https://laura-salas.github.io/editeurs_texte.html'><span>Je vous invite à lire ceci, qui pourrait grandement vous faciliter la vie pour ce devoir et les prochains à venir.</span></a></p><h2 id='aides-mémoires--ressources-de-la-semaine'><span>Aides mémoires + ressources de la semaine</span></h2><h3 id='validateur-css-cochez-valider-css'><a href='https://validator.w3.org/#validate_by_input'><span>Validateur CSS (cochez &quot;valider CSS&quot;)</span></a></h3><hr /><h3 id='w3schools-le-css-excellente-source-à-utiliser-beaucoup-tout-le-temps-tout-le-long-de-votre-carrière-'><a href='https://www.w3schools.com/css/default.asp'><span>W3Schools: Le CSS (</span><strong><span>excellente source, à utiliser BEAUCOUP, tout le temps, tout le long de votre carrière :)</span></strong><span>)</span></a></h3><p><a href='https://htmlcheatsheet.com/css/'><span>Aide memoire (en anglais, </span><strong><span>vraiment</span></strong><span> cool car interactif)</span></a></p><p>&nbsp;</p><p><span> </span><a href='https://dept-info.labri.fr/~felix/Annee2007-08/A2/AP3/aide-memoire_css.pdf'><span>Aide memoire (francais)</span></a></p><p>&nbsp;</p><h2 id='le-css-pourquoi'><span>Le CSS: pourquoi?</span></h2><p><span>Ça serait quoi le monde sans CSS? (demo)</span></p><p><a href='http://www.google.com' target='_blank' class='url'>www.google.com</a></p><p><a href='http://www.umontreal.ca' target='_blank' class='url'>www.umontreal.ca</a></p><p><span>Oeuvres d&#39;art css :) </span></p><p><a href='https://wanderful.index.studio/fr/' target='_blank' class='url'>https://wanderful.index.studio/fr/</a></p><p><a href='https://argor-heraeus.com/' target='_blank' class='url'>https://argor-heraeus.com/</a></p><h2 id='les-selecteurs-la-base-du-css'><span>Les selecteurs: la base du CSS</span></h2><p><span>(demo) </span></p><h2 id='les-propriétés-déléments'><span>Les propriétés d&#39;éléments </span></h2><p><span>color, fontSize, background-color, etc. </span></p><p>&nbsp;</p><h2 id='les-margin-et-padding'><span>Les margin et padding </span></h2><p><span>(demo)</span></p><h2 id='les-importations-externes'><span>Les importations externes</span></h2><h4 id='les-url'><span>Les url(&#39;...&#39;)</span></h4><p><span>Demo: background-image</span></p><h4 id='astuce-google-font'><span>Astuce: Google font</span></h4><p><a href='https://fonts.google.com/' target='_blank' class='url'>https://fonts.google.com/</a><span> (demo de comment l&#39;insérer dans votre css)</span></p><p>&nbsp;</p><h4 id='google-icons'><span>Google icons</span></h4><p><a href='https://fonts.google.com/icons' target='_blank' class='url'>https://fonts.google.com/icons</a></p><p><span>Google Icons</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">href</span>=<span class="cm-string">"https://fonts.googleapis.com/icon?family=Material+Icons"</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-attribute">rel</span>=<span class="cm-string">"stylesheet"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 52px;"></div><div class="CodeMirror-gutters" style="display: none; height: 52px;"></div></div></div></pre><p>&nbsp;</p><p><span>Autres sources cool: </span><a href='https://www.dafont.com/'><span>Dafont.com</span></a><span> (attention aux droits d&#39;auteurs!)</span></p><p>&nbsp;</p><h2 id='lordre-de-vos-propriétés'><span>L&#39;ordre de vos propriétés </span></h2><p><span>Last in first out? :)  Dernier arrivé, premier servi. (demo)</span></p><p>&nbsp;</p><h2 id='importations-dautres-stylesheets'><span>Importations d&#39;autres stylesheets</span></h2><ul><li><span>L&#39;affectation de celles-ci sur l&#39;ordre</span></li><li><span>Conflits possibles </span></li><li><span>Quand faire ceci? </span></li></ul><p>&nbsp;</p><h2 id='les-inline-styles-les-spans'><span>Les inline styles, les spans </span></h2><p><span>C&#39;est important de comprendre: les inline style prennent le dessus sur les CSS &quot;externes&quot;</span></p><p>&nbsp;</p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  Je suis un texte plate sauf pour <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">style</span>=<span class="cm-string">"rouge"</span><span class="cm-tag cm-bracket">&gt;</span>cette partie-ci!<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span> et la je suis plate encore :-(</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 104px;"></div><div class="CodeMirror-gutters" style="display: none; height: 104px;"></div></div></div></pre><p>&nbsp;</p><h2 id='les-flexbox'><span>Les flexbox</span></h2><p><span>Comment aligner vos éléments sur la même ligne? Comment handle les changements de fenêtre?  </span></p><p><span>(demo)</span></p><p><span> </span></p><p><span> </span></p></div></div>
+
+<body class='typora-export'>
+    <div class='typora-export-content'>
+        <div id='write' class=''>
+            <p><a href='https://laura-salas.github.io/laura-salas.github.io'><span>← Revenir vers le homepage</span></a></p>
+            <h1 id='demo-6'><span>Demo 6</span></h1>
+            <h2 id='exercice-de-la-semaine'><span>Exercice de la semaine</span></h2>
+            <p><a href='https://laura-salas.github.io/exos/ex5.html'><span>Lien vers le devoir 6 en CSS</span></a></p>
+            <h2 id='à-propos-des-éditeurs-de-texte-encore'><span>À propos des éditeurs de texte: encore</span></h2>
+            <p><a href='https://laura-salas.github.io/editeurs_texte.html'><span>Je vous invite à lire ceci, qui pourrait grandement vous faciliter la vie pour ce devoir et les prochains à venir.</span></a></p>
+            <h2 id='aides-mémoires--ressources-de-la-semaine'><span>Aides mémoires + ressources de la semaine</span></h2>
+            <h3 id='validateur-css'><a href='https://validator.w3.org/#validate_by_input'><span>Validateur CSS</span></a></h3>
+            <hr />
+            <h3 id='w3schools-le-css-excellente-source-à-utiliser-beaucoup-tout-le-temps-tout-le-long-de-votre-carrière-'><a href='https://www.w3schools.com/css/default.asp'><span>W3Schools: Le CSS (</span><strong><span>excellente source, à utiliser BEAUCOUP, tout le temps, tout le long de votre carrière :)</span></strong><span>)</span></a></h3>
+            <p><a href='https://laura-salas.github.io/ressources_sup/flexboxdemo.html'><span>Mini demo flexbox interactive :)</span></a></p>
+            <p><a href='https://htmlcheatsheet.com/css/'><span>Aide memoire (en anglais, </span><strong><span>vraiment</span></strong><span> cool car interactif)</span></a></p>
+            <p><span> </span></p>
+            <p><span> </span><a href='https://dept-info.labri.fr/~felix/Annee2007-08/A2/AP3/aide-memoire_css.pdf'><span>Aide memoire (francais)</span></a></p>
+            <p><span> </span></p>
+            <h2 id='le-css-pourquoi'><span>Le CSS: pourquoi?</span></h2>
+            <p><span>Ça serait quoi le monde sans CSS? (demo)</span></p>
+            <p><a href='http://www.google.com/'><span>www.google.com</span></a></p>
+            <p><a href='http://www.umontreal.ca/'><span>www.umontreal.ca</span></a></p>
+            <p><span>Oeuvres d&#39;art css :) </span></p>
+            <p><a href='https://wanderful.index.studio/fr/' target='_blank' class='url'>https://wanderful.index.studio/fr/</a></p>
+            <p><a href='https://argor-heraeus.com/' target='_blank' class='url'>https://argor-heraeus.com/</a></p>
+            <h2 id='les-selecteurs-la-base-du-css'><span>Les selecteurs: la base du CSS</span></h2>
+            <p>&nbsp;</p>
+            <h3 id='important-à-savoir-javais-oublié-durant-la-démo-classes-vs-id-vs-nom-de-balise'><span>Important à savoir (j&#39;avais oublié durant la démo): classes vs. id vs. nom de balise</span></h3>
+            <ul>
+                <li>
+                    <p><strong><span>Balises:</span></strong><span> On utilise les selecteurs de balise html (</span><code>div</code><span>, </span><code>body</code><span>, </span><code>p</code><span>, etc.) quand on est vraiment sûr.e qu&#39;on veut </span><strong><span>absolument</span></strong><span> appliquer le style correct à </span><strong><span>toutes</span></strong><span> les balises de ce genre. C&#39;est applicable dans beaucoup de cas, mais la plupart du cas il est préférable d&#39;utiliser une </span><strong><span>classe</span></strong><span> à la place. Par exemple, on fait appel à une balise div simplement avec la syntaxe css</span></p>
+                    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+        </div>
+        <div class="CodeMirror-measure"></div>
+        <div style="position: relative; z-index: 1;"></div>
+        <div class="CodeMirror-code" role="presentation">
+            <div class="CodeMirror-activeline" style="position: relative;">
+                <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+                <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">div</span> {</span></pre>
+            </div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">/* vos proprietes ici */</span></span></pre>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 78px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 78px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>et le HTML </span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation">
+        <div class="CodeMirror-activeline" style="position: relative;">
+            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  blabla</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 78px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 78px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p>&nbsp;</p>
+    </li>
+    <li>
+        <p><strong><span>Classes:</span></strong><span> On les utilise beaucoup mais de manière cohérente. C&#39;est ici que vous allez généralement grouper vos éléments en sous-groupes. Par exemple, peut-être que les images qui ont la même taille et le meme ombrage pourraient faire partie de la classe </span><code>mes-images-stylees</code><span>, que j&#39;appelerais sur mon CSS avec:</span></p>
+        <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+        </div>
+        <div class="CodeMirror-measure"></div>
+        <div style="position: relative; z-index: 1;"></div>
+        <div class="CodeMirror-code" role="presentation">
+            <div class="CodeMirror-activeline" style="position: relative;">
+                <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+                <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.mes-images-stylees</span> {</span></pre>
+            </div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">/* vos proprietes ici*/</span> </span></pre>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 78px;"></div>
+        <div class="CodeMirror-gutters" style="display: none; height: 78px;"></div>
+        </div>
+        </div>
+        </pre>
+        <p><span>et le HTML</span></p>
+        <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+        </div>
+        <div class="CodeMirror-measure"></div>
+        <div style="position: relative; z-index: 1;"></div>
+        <div class="CodeMirror-code" role="presentation" style="">
+            <div class="CodeMirror-activeline" style="position: relative;">
+                <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+                <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+            </div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"photoA.jpg"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"mes-images-stylees"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"photoB.jpg"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"mes-images-stylees"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+            <div class="" style="position: relative;">
+                <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+            </div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"photoC.jpg"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"mes-images-stylees"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 182px;"></div>
+        <div class="CodeMirror-gutters" style="display: none; height: 182px;"></div>
+        </div>
+        </div>
+        </pre>
+        <p><span>Même si mes images sont dans des différents divs, la classe </span><code>.mes-images-stylees</code><span> va les selectionner. </span></p>
+    </li>
+    <li>
+        <p><span>IDs (</span><span style="color:red;"><span>ATTENTION</span></span><span>): sont à utiliser avec prudence car ils sont là pour des cas très précis. Ils servent à sélectionner !!!!</span><strong><u><span>UN SEUL</span></u></strong><span>!!!!!! (UN) (VRAIMENT UN SEUL) élément. Il peut être util quand on est vraiment sûr.e que ce qu&#39;on veut faire ne s&#39;applique qu&#39;à une seule place, mais il est souvent abusé pour &quot;règler&quot; des problèmes qu&#39;on a parce qu&#39;on est trop paresseux.se pour changer nos autres règles CSS. /rant</span></p>
+    </li>
+    </ul>
+    <p><span> </span><span>CSS:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation">
+        <div class="CodeMirror-activeline" style="position: relative;">
+            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">#mon-id-pour-un-seul-element</span> {</span></pre>
+        </div>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">/* vos proprietes ici */</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 78px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 78px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span> </span><span>HTML:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation">
+        <div class="CodeMirror-activeline" style="position: relative;">
+            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"photoA.jpg"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"mes-images-stylees"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"mon-id-pour-un-seul-element"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"photoB.jpg"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"mes-images-stylees"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 104px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 104px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>Ce qui s&#39;appliquera seulement sur le </span><code>img</code><span> qui contient la photo </span><code>photoA.jpg</code><span>. </span></p>
+    <p>&nbsp;</p>
+    <p><span>Notez que techniquement si vous utilisez un #id pour plusieurs elements... ca pourrait marcher MAIS ca va briser bien de choses a long terme. Faites attention hihi</span></p>
+    <p>&nbsp;</p>
+    <h2 id='les-propriétés-déléments'><span>Les propriétés d&#39;éléments </span></h2>
+    <p><span>color, fontSize, background-color, etc. </span></p>
+    <h3 id='encore-une-fois-parce-que-ça-doit-vous-rentrer'><span>Encore une fois, parce que ça doit vous rentrer: </span></h3>
+    <p><span>Allez sur </span><a href='https://www.w3schools.com/css/default.asp'><span>W3Schools: Le CSS</span></a><span> et apprenez sur les différentes propriétés possibles que vous pouvez ajouter à vos éléments.</span></p>
+    <h2 id='les-margin-et-padding'><span>Les margin et padding </span></h2>
+    <p><img src="https://i.imgur.com/w5Mx1p1.png" width="600px" style="border-radius: 10px;"></p>
+    <ul>
+        <li>
+            <p><strong><span>Quand utiliser l&#39;un vs. l&#39;autre?</span></strong><span> </span></p>
+            <ul>
+                <li><span style="color: #fa5252"><b><span>Margin:</span></b></span><span> espace extérieur (l&#39;élément a besoin d&#39;espace des choses </span><strong><span>en dehors</span></strong><span> de lui même) -&gt; Dans le dessin, plus de marge veut dire plus d&#39;espace </span><span style="color: #fa5252"><b><span>rouge</span></b></span></li>
+                <li><span style="color: #4c6ef5"><b><span>Padding:</span></b></span><span> espace intérieur (l&#39;élément a besoin d&#39;espace des choses </span><strong><span>à l&#39;intérieur</span></strong><span> de lui même) -&gt; Dans le dessin, plus de padding veut dire plus d&#39;espace </span><span style="color: #4c6ef5"><b><span>bleu</span></b></span></li>
+            </ul>
+        </li>
+    </ul>
+    <p><span>(demo)</span></p>
+    <h2 id='les-importations-externes'><span>Les importations externes</span></h2>
+    <h4 id='les-url'><span>Les url(&#39;...&#39;)</span></h4>
+    <p><span>Exemple: background-image:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">img</span> {</span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-image</span>: <span class="cm-atom">url</span>(<span class="cm-string">"ton-lien-dimage-ici"</span>);</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 78px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 78px;"></div>
+    </div>
+    </div>
+    </pre>
+    <ul>
+        <li><span>le lien d&#39;image peut etre un lien web ou bien un lien pour un fichier, par exemple </span><code>monimage.jpg</code><span> </span></li>
+    </ul>
+    <h4 id='on-peut-utiliser-url-pour-importer-un-font-dans-css'><span>On peut utiliser </span><code>url()</code><span> pour importer un font dans css! </span></h4>
+    <h4 id='astuce-google-font'><span>Astuce: Google font</span></h4>
+    <p><a href='https://fonts.google.com/' target='_blank' class='url'>https://fonts.google.com/</a><span> </span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">@import</span> <span class="cm-atom">url</span>(<span class="cm-string">'url-de-ton-font-avec-ses-propriétés'</span>);</span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*plus bas dans ton css*/</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.taclasseaveclefontimporte</span> {</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">font-family</span>: <span class="cm-string">'Nom de ton font importe'</span>, <span class="cm-variable">type-de-ton-font</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 156px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 156px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><a href='https://www.w3schools.com/css/css_font_google.asp'><span>Tutoriel W3Schools sur l&#39;importation de fonts</span></a></p>
+    <h4 id='google-icons'><span>Google icons</span></h4>
+    <p><a href='https://fonts.google.com/icons' target='_blank' class='url'>https://fonts.google.com/icons</a></p>
+    <p><span>Utiliser google icons: sur votre HTML, importer ceci dans le head</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">href</span>=<span class="cm-string">"https://fonts.googleapis.com/icon?family=Material+Icons"</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-attribute">rel</span>=<span class="cm-string">"stylesheet"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">&lt;!-- autres choses de votre head --&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 130px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 130px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span> Plus tard dans votre html </span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html "><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html "><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">i</span> <span class="cm-attribute">class</span>=<span class="cm-string">"material-icons"</span><span class="cm-tag cm-bracket">&gt;</span>nom-de-votre-icône <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 26px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 26px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>(Par exemple, pour faire un icône de nuage, vous pouvez écrire </span><code>cloud</code><span> dans </span><code>nom-de-votre-icône</code><span>!)</span></p>
+    <p><span>Autres sources cool de fonts: </span><a href='https://www.dafont.com/'><span>Dafont.com</span></a><span> (attention aux droits d&#39;auteur!)</span></p>
+    <p><span> </span></p>
+    <h2 id='lordre-de-vos-propriétés'><span>L&#39;ordre de vos propriétés </span></h2>
+    <p><span>Last in first out? :) Dernier arrivé, premier servi. (demo)</span></p>
+    <p><span>Le html suivant: </span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Allo<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 26px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 26px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>Couplé avec le CSS suivant: </span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">p</span> {</span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">color</span>: <span class="cm-keyword">red</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">p</span> {</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">color</span>: <span class="cm-keyword">green</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 182px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 182px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>Affiche: </span></p>
+    <p>&nbsp;</p>
+    <div style="text-align: center; color:green;">
+        <p style="">Allo</p>
+    </div>
+    <p>&nbsp;</p>
+    <p><span>Parce qu&#39;on </span><strong><span>redéfinit plus bas dans le css</span></strong><span> que p doit être de couleur verte, même si originalement son contenu était rouge.</span></p>
+    <p>&nbsp;</p>
+    <p><span>Plus d&#39;info sur l&#39;ordre de &quot;précedence &quot; </span><a href='http://tutorials.jenkov.com/css/precedence.html'><span>sur ce lien</span></a></p>
+    <p>&nbsp;</p>
+    <h4 id='le-mot-important-donner-priorité'><span>Le mot </span><code>!important</code><span>: donner priorité </span></h4>
+    <p><span>Le keyword </span><code>!important</code><span> peut faire qu&#39;une propriété prenne </span><strong><span>toujours</span></strong><span> le dessus, peu importe son ordre. Si l&#39;on reprend l&#39;exemple ci-dessus, mais l&#39;on change légèrement le CSS:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">p</span> {</span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">color</span>: <span class="cm-keyword">red</span> <span class="cm-keyword">!important</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">p</span> {</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">color</span>: <span class="cm-keyword">green</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 182px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 182px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>Cela affiche maintenant:</span></p>
+    <div style="text-align: center; color: red;">
+        <p>Allo</p>
+    </div>
+    <p><span>Car </span><code>color: red !important</code><span> dit au CSS de prioriser la couleur rouge, peu importe son positionnement. Par contre, si vous avez deux !important (pas recommandé), le dernier !important prend le dessus. </span></p>
+    <p><strong><span>Certains sélecteurs, comme des </span><code>#id</code><span>, ne sont pas affectés par les </span><code>!important</code><span>, car ils sont plus spécifiques et ont de la priorité plus grande.</span></strong><span> </span></p>
+    <p><span>Essayez d&#39;utiliser </span><code>!important</code><span> le </span><strong><span>moins</span></strong><span> possible et priorisez la bonne structure de votre CSS lorsque possible. </span></p>
+    <h2 id='importations-dautres-stylesheets'><span>Importations d&#39;autres stylesheets</span></h2>
+    <ul>
+        <li><span>L&#39;affectation de celles-ci sur l&#39;ordre</span></li>
+        <li><span>Conflits possibles </span></li>
+        <li><span>Quand faire ceci? </span></li>
+    </ul>
+    <h2 id='les-inline-styles-les-spans'><span>Les inline styles, les spans </span></h2>
+    <p><span>C&#39;est important de comprendre: les inline style prennent le dessus sur les CSS &quot;externes&quot;</span></p>
+    <p><span> Le HTML:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  Je suis un texte plate sauf pour <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">style</span>=<span class="cm-string">"color: red;"</span><span class="cm-tag cm-bracket">&gt;</span>cette partie-ci!<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span> et la je suis plate encore :-(</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 104px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 104px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span> Affiche</span></p>
+    <p>
+        Je suis un texte plate sauf pour <span style="color: red;">cette partie-ci!</span> et la je suis plate encore :-(
+    </p>
+    <p>&nbsp;</p>
+    <h2 id='les-flexbox'><span>Les flexbox</span></h2>
+    <p><span>Comment aligner vos éléments sur la même ligne? Comment handle les changements de fenêtre? </span></p>
+    <p><img src="https://media2.giphy.com/media/4tngugtDypU5KBJV0G/giphy.gif?cid=790b7611e74a296c0c8c3e07ecf6dd775a1e21abf721bf18&rid=giphy.gif&ct=g" width="800px"></p>
+    <p><span> </span></p>
+    <h4 id='flexbox-simple'><span>Flexbox simple: </span></h4>
+    <p><span>HTML:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"parent"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"enfant"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Un<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"enfant"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Deux<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 208px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 208px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>CSS:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.parent</span> {</span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">display</span>: <span class="cm-atom">flex</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-color</span>: <span class="cm-keyword">lightcoral</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">padding</span>: <span class="cm-number">20px</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.enfant</span> { </span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">margin</span>: <span class="cm-number">20px</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-color</span>: <span class="cm-keyword">lightgreen</span>;</span></pre>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 234px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 234px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>(Notez que je rajoute du padding et margin pour donner de l&#39;espace entre les divs enfants et parent)</span></p>
+    <p><span>Ce qui fait: </span></p>
+    <p><img src="https://i.imgur.com/jmrzrBx.png" width="800px"></p>
+    <h4 id='changer-lordre-de-nos-elements'><span>Changer l&#39;ordre de nos elements: </span></h4>
+    <p><span>Avec le même exemple, l&#39;on peut rajouter les attributs </span><code>order: 1</code><span>, </span><code>order: 2</code><span>, etc à un élément spécifique (par exemple, à travers un id qui va sélectionner </span><strong><span>un</span></strong><span> élément précis), ce qui permet de changer l&#39;ordre dans lequel les éléments viennent de gauche à droite (si le flex est horizontal, ce qui est le cas par défaut) ou du haut vers le bas (si le flex est vertical)</span></p>
+    <p><span>HTML:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation" style="">
+        <div class="CodeMirror-activeline" style="position: relative;">
+            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"parent"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"enfant"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"deux"</span><span class="cm-tag cm-bracket">&gt;</span>Un<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"enfant"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"un"</span><span class="cm-tag cm-bracket">&gt;</span>Deux<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 104px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 104px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>CSS:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation" style="">
+        <div class="CodeMirror-activeline" style="position: relative;">
+            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.parent</span> {</span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">display</span>: <span class="cm-atom">flex</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-color</span>: <span class="cm-keyword">lightcoral</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">padding</span>: <span class="cm-number">20px</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.enfant</span> { </span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">margin</span>: <span class="cm-number">20px</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-color</span>: <span class="cm-keyword">lightgreen</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">#un</span> { </span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-property">order</span>: <span class="cm-number">1</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-builtin">#deux</span> {</span></pre>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-property">order</span>: <span class="cm-number">2</span>;</span></pre>
+        </div>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 390px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 390px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>Ce qui change l&#39;ordre des mots:</span></p>
+    <p><img src="https://i.imgur.com/H1l1EH4.png" width="800px"></p>
+    <h4 id='indiquer-la-proportion-à-prendre'><span>Indiquer la proportion à prendre</span></h4>
+    <p><span>En reprennant l&#39;exemple ci-dessus, on peut rajouter les attributs </span><code>flex-grow: 1</code><span> et </span><code>flex-grow: 2</code><span>, qui vont donner des </span><strong><span>proportions</span></strong><span> de taille que les éléments </span><u><span>enfants</span></u><span> peuvent prendre dans l&#39;espace qui leur est alloué par leur </span><u><span>parent</span></u><span>.</span></p>
+    <p><span>HTML</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="html"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="html"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"parent"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"enfant"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"deux"</span><span class="cm-tag cm-bracket">&gt;</span>Un<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    <div class="" style="position: relative;">
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"enfant"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"un"</span><span class="cm-tag cm-bracket">&gt;</span>Deux<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 104px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 104px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>CSS:</span></p>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="css" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="css"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation" style="">
+        <div class="CodeMirror-activeline" style="position: relative;">
+            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.parent</span> {</span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">display</span>: <span class="cm-atom">flex</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-color</span>: <span class="cm-keyword">lightcoral</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">padding</span>: <span class="cm-number">20px</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.enfant</span> { </span></pre>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">margin</span>: <span class="cm-number">20px</span>;</span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">background-color</span>: <span class="cm-keyword">lightgreen</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">#un</span> { </span></pre>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">flex-grow</span>: <span class="cm-number">1</span>;</span></pre>
+        </div>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">order</span>: <span class="cm-number">1</span>;</span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-builtin">#deux</span> {</span></pre>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">flex-grow</span>: <span class="cm-number">2</span>;</span></pre>
+        </div>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">order</span>: <span class="cm-number">2</span>;</span></pre>
+        </div>
+        <div class="" style="position: relative;">
+            <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 442px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 442px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span>Ce qui change la proportion (remarquez que l&#39;attribut #deux est donné à l&#39;élément qui contient le mot &quot;un&quot;):</span></p>
+    <p><img src="https://i.imgur.com/U956XmS.png" width="800px"></p>
+    <p>&nbsp;</p>
+    <h4 id='autres-lectures-w3schools-sur-le-flexbox'><a href="https://www.w3schools.com/css/css3_flexbox.asp"><span>Autres lectures: W3Schools sur le flexbox</span></a></h4>
+    <p><span>(Particulièrement, je vous recommande la lecture sur comment faire un </span><strong><span>flexbox vertical</span></strong><span> et un </span><strong><span>flexbox responsive</span></strong><span>)</span></p>
+    </div>
+    </div>
 </body>
+
 </html>
