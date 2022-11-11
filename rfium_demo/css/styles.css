@@ -4543,7 +4543,7 @@ textarea.form-control-lg {
 /* master head*/ 
 .masthead  {
   /* margin-top: calc(var(--nav-height)*0.5); */
-  background-image: url("/assets/img/groupphoto.png") !important;
+  background-image: url("https://i.imgur.com/oiDbE04.png") !important;
   /* background-size: cover; */
   height: 85vh;
   margin-top: -100px;
