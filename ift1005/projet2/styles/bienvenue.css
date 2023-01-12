@@ -1,0 +1,189 @@
+body {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+@font-face {
+	font-family: dialog_font;
+	src: url("../assets/dialog_font.otf");
+}
+
+#vid_bg {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+@keyframes iris-open {
+	from {
+		border: 500px solid rgba(0, 0, 0, 1);
+		background-color: transparent;
+	}
+	to {
+		border: 0px solid rgba(0, 0, 0, 0.4);
+		background-color: transparent;
+		visibility: hidden;
+	}
+}
+
+
+/*animation de fade in noir*/
+
+#irisy div {
+	z-index: 5;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	left: 0;
+	box-sizing: border-box;
+	animation-name: iris-open;
+	animation-delay: 5s;
+	animation-fill-mode: both;
+	animation-duration: 4s;
+	/*source du fade-in: http://thenewcode.com/558/Super-Easy-CSS-Iris-Wipe */
+}
+
+#nooky {
+	width: 15%;
+	top: 50%;
+	left: 43%;
+	position: absolute;
+}
+
+@keyframes dialog-slide {
+	from {
+		width: 0;
+		top: 95%;
+	}
+	to {
+		width: 500px;
+		top: 74%;
+	}
+}
+
+#fake-dialog div {
+	position: absolute;
+	left: 35%;
+	z-index: 0;
+	width: 500px;
+	height: 130px;
+	background-color: #fffae4;
+	border-radius: 20%;
+	animation-name: dialog-slide;
+	animation-fill-mode: both;
+	animation-delay: 9s;
+	animation-duration: 0.5s;
+}
+
+@keyframes show-dialog {
+	from {
+		visibility: hidden;
+	}
+	to {
+		visibility: visible;
+	}
+}
+
+.dialog div {
+	position: absolute;
+	top: 68%;
+	left: 32%;
+	z-index: 1;
+}
+
+.dialog-container {
+	background-image: url("../assets/dialog.png");
+	background-size: cover;
+	width: 600px;
+	height: 200px;
+	animation-name: show-dialog;
+	animation-fill-mode: both;
+	animation-delay: 9.4s;
+	animation-duration: 0.05s;
+}
+
+
+/* The typing effect */
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+	/*source: https://css-tricks.com/snippets/css/typewriter-effect/ */
+}
+
+.dialog-container p {
+	font-family: dialog_font;
+	padding-top: 35px;
+	color: #7b6951;
+	font-size: 1.2em;
+	line-height: 1.5;
+	padding-bottom: 40px;
+	word-break: break-all;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.dialog-container p {
+	animation: show-dialog, typing 2.5s steps(40, end);
+	animation-fill-mode: both;
+	animation-delay: 11s;
+}
+
+.dialog-container p .emph {
+	color: #00a1bb;
+}
+
+@keyframes logo-appear {
+	from {
+		opacity: 0%
+	}
+	to {
+		opacity: 100%;
+	}
+	from {
+		margin-top: 12%;
+	}
+	to {
+		margin-top: 10%;
+	}
+}
+
+#logo {
+	z-index: 6;
+	position: absolute;
+	margin-top: 12%;
+	margin-left: 43%;
+	animation-name: logo-appear;
+	animation-fill-mode: both;
+	animation-delay: 1s;
+	animation-duration: 4s;
+}
+
+@keyframes bouncey {
+	from {
+		top: 86.5%;
+	}
+	to {
+		top: 87%;
+	}
+}
+
+#arrowy {
+	position: absolute;
+	top: 87%;
+	right: 48%;
+	width: 30px;
+	z-index: 4;
+	animation-name: bouncey;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}

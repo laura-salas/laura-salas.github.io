@@ -1,0 +1,20 @@
+/* NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER  NE PAS ENLEVER */
+
+* {
+  box-sizing: border-box;
+  background-size: cover;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  text-align: justify;
+}
+
+/* [OPTIONNEL] REGARDEZ CECI ET UTILISEZ LES PROPRIETES SUIVANTES SI VOS IMAGES DEBORDENT DE PARTOUT (cette classe-ci n'existe pas dans le html, donc vous devez copier et coller les proprietes width et height ci-dessous pour les utiliser sur vos images) */ 
+.RECOMMENDATION-DE-PROPRIETES-DE-GRANDEUR-POUR-SI-VOUS-METTEZ-DES-IMAGES-QUI-SONT-TROP-GRANDES{
+  width: 20%;
+  height: 20vw;
+}
+
+/* Votre code en dessous ce ceci :)*/

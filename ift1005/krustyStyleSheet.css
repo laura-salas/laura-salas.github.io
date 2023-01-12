@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
+
+@font-face {
+    font-family: 'bob';
+    src: url("Krabby_Patty.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    max-width: 98%;
+    padding: 5%;
+    background-size: cover;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+a {
+    color: hotpink;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: rgb(48, 245, 226);
+    text-decoration: none;
+}
+
+/* titres */ 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'bob';
+}
+
+
+h1.geant, p.geant{
+    font-size: 3em;
+}
+
+/* divs */ 
+
+div {
+    padding: 5%;
+}
+
+.centre {
+    margin: auto;
+}
+
+.largeur_entiere {
+    width: 90%;
+}
+
+.largeur_trois_quarts {
+    width: 75%;
+}
+
+.largeur_un_demi {
+    width: 50%;
+}
+
+.largeur_un_quart {
+    width: 25%;
+}
+
+
+.coins_ronds {
+    border-radius: 15px;
+}
+
+.bord_noir {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.bord_blanc {
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+}
+
+.bord_epais {
+    border-width: 4px !important;
+}
+
+/* images */ 
+
+img {
+    object-fit: cover;
+    width: 10%;
+    height: auto;
+}
+
+img.geante {
+    width: 100%;
+}
+
+img.large {
+    width: 75%;
+}
+
+img.petite {
+    width: 25%;
+}
+
+img.moyenne {
+    width: 40%;
+}
+
+img.centree {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.gauche {
+    display: block;
+    margin-left: 25%;
+}
+
+img.droite {
+    display: block;
+    margin-left: 75%;
+    margin-right: 25%;
+}
+
+img.meme_ligne {
+    display: inline !important;
+}
+
+/* fonds */ 
+
+.fond_a {
+    background-image: url("https://ichef.bbci.co.uk/news/976/cpsprodpb/123DA/production/_107741747_matts.jpg");
+}
+
+
+.fond_b {
+    background-image: url("https://i.pinimg.com/originals/bb/0d/45/bb0d4572eae04ea2b806c6a05b0e2afa.jpg");
+}
+
+
+.fond_c {
+    background-image: url("https://pbs.twimg.com/media/EecB5_2X0AU9Z1z.png");
+}
+
+
+.fond_d {
+    background-image: url("https://i.pinimg.com/originals/28/07/f7/2807f79616e22f59e69ec94a89ec9c45.jpg");
+}
+
+
+.fond_e {
+    background-image: url("https://images-na.ssl-images-amazon.com/images/S/pv-target-images/d7e724737a882a3017e4f3ea32a38cbd51793f84ebecf25b8d70aee365dff51a._V_SX1080_.jpg");
+}
+
+.fond_f {
+    background-image: url("https://i.pinimg.com/originals/94/db/1d/94db1d14988ca12f765d8b5947c01ced.png");
+}
+
+
+.fond_blanc {
+    background-color: white;
+}
+
+.fond_blanc_transparent {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* textes */
+
+.texte_centre {
+    text-align: center;
+}
+
+.texte_blanc {
+    color: white;
+}
+
+.texte_noir {
+    color: black;
+}
+
+.texte_bleuvert {
+    color: rgb(48, 245, 226);
+}
+
+.texte_rouge {
+    color: rgb(135, 12, 12);
+}
+
+.texte_jaune {
+    color: rgb(255, 243, 110);
+}
+
+.ombrage_texte {
+    text-shadow: 2px 2px 4px black;
+}
+
+.brillance_texte {
+    text-shadow: 0px 0px 7px rgb(48, 245, 226);
+}
+
+.liste_jaune li::marker {
+    color: yellow;
+}
+
+td, th, p, li, span {
+    font-size: 1.25em;
+}
+
+p.justifier {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+p.super_gras {
+    font-weight: 700;
+}
+
+p.gras {
+    font-weight: 500;
+}
+
+p.mince {
+    font-weight: 300;
+}
+
+
+p.un_peu_plus_grand {
+    font-size: 1.5em;
+}
+
+.spongebob {
+    font-family: 'bob';
+    background-image: url("https://i.pinimg.com/originals/ac/c4/4f/acc44fec183b5cd4324f868f2cc0092f.jpg");
+    background-size: 75px 75px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* table */
+
+/* Les bordures sont rejoignes plutot que de former des 
+    cases distinctes */
+table.bord_uni {
+    border-collapse: collapse;
+}
+
+
+/* Grossis toutes les cases de la table */
+table.lousse * {
+    padding: 1.5%;
+}
+
+
+/* tr */
+/* S'appliquent à toutes les cases de la rangée tr */
+
+tr.bord_mince * {
+    border-style: solid;
+    border-width: 1px;
+}
+
+tr.bord_moyen * {
+    border-style: solid;
+    border-width: 2px;
+}
+
+tr.bord_epais * {
+    border-style: solid;
+    border-width: 4px;
+}
+
+tr.bord_noir * {
+    border-color: black;
+}
+
+tr.bord_blanc * {
+    border-color: white;
+}
+
+
+tr.un_peu_plus_grand * {
+    font-size: 1.5em;
+}
