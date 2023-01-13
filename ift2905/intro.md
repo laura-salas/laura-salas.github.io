@@ -103,17 +103,21 @@ Nous allons vous passer un lien pour rentrer vos disponibilités bientôt.
 
 Outil de collaboration en équipe, **<u>vraiment</u>** bien fait. Comme un tableau géant intéractif. 
 
-## Testons-le:
+## Board demo miro vu en cours:
 
 # [**http://tiny.cc/intromiro**](http://tiny.cc/intromiro)
+
+
+
+#### Collage fait par ceux présents: 
+
+![Intro Miro - Frame 12](assets/Intro Miro - Frame 12.jpg)
 
 
 
 ## Concept important à retenir: 
 
 [Wireframing](https://www.experienceux.co.uk/faqs/what-is-wireframing/)
-
-
 
 
 
@@ -126,11 +130,15 @@ Outil de collaboration en équipe, **<u>vraiment</u>** bien fait. Comme un table
 * Interface de Figma 
 * Niveau de détail attendu dans le cours (!)
 
-### Joignez-moi ici: 
+### Board démo figma vu en cours:
 
 # [**http://tiny.cc/introfig**](http://tiny.cc/introfig)
 
 [Voir le prototype interactif de Krabby Patty Eats](https://www.figma.com/proto/wx92Lod8cyQLKA44p71DgC/Intro-Figma?node-id=16%3A46&scaling=scale-down&page-id=0%3A1&starting-point-node-id=9%3A14&show-proto-sidebar=1)
+
+<img src="assets/image-20230113151713614.png" width="40%">
+
+
 
 ### Plugins recommandés (même nécessaires pour les devoirs)
 
