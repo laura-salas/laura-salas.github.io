@@ -2,6 +2,20 @@
 
 <hr/>
 
+## Liens rapides
+
+#### Tutoriels de 15 minutes de ce que nous avons vu en classe*:
+
+* [Tutoriel miro (français)](https://www.youtube.com/watch?v=nL6PzwKC9Qc)
+* [Tutoriel figma (français)](https://www.youtube.com/watch?v=M0xkv7Sqtc0)
+
+* [Tutoriel wireframe sur Miro](https://www.youtube.com/watch?v=mQHMQYqUC_8) (anglais, plus complet) 
+* [Tutoriel intro figma](https://www.youtube.com/watch?v=jk1T0CdLxwU) (anglais, plus complet)
+
+*Note: ceux en anglais sont plus pertinents pour ce que nous avons vu. 
+
+
+
 ## Plan de la démo
 
 > 1. Présentation générale 
