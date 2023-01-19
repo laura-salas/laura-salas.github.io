@@ -1,0 +1,690 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<meta charset="UTF-8" content="">
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						} @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>UIstudy</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='hmi-study---midterm'><span> HMI Study - Midterm</span></h1><p><em><span>Adapted from slides of Prof. Bessmeltsev</span></em><span>, IFT2905 </span></p><h2 id='intro'><span>Intro</span></h2><h4 id='autres-types-dinterfaces'><span>Autres types d&#39;interfaces</span></h4><ul><li><span>Interface humain-objet</span></li><li><span>Interface humain-produit</span></li></ul><h4 id='definition-what-is-a-human-machine-interface'><span>Definition: what is a Human-Machine-interface?</span></h4><p><span>In industrial settings, HMIs can be used to:</span></p><ul><li><span>Visually display data</span></li><li><span>Track production time, trends, and tags</span></li><li><span>Oversee KPIs</span></li><li><span>Monitor machine inputs and outputs</span></li><li><span>And more</span></li></ul><h4 id='common-uses-of-hmis'><span>Common uses of HMIs</span></h4><p><span>HMIs communicate with </span><strong><span>Programmable Logic Controllers (PLCs)</span></strong><span> and </span><strong><span>input/output sensors</span></strong><span> to get and display information for users to view. </span></p><p><strong><span>HMI screens can be used for a single function, like monitoring and tracking</span></strong><span>, or for performing more sophisticated operations, like switching machines off or increasing production speed, depending on how they are implemented.</span></p><hr /><h4 id='la-question-centrale'><span>La question centrale:</span></h4><p><span>Supposons que: </span></p><ul><li><span>l’utilisateur sait ce qu’il veut faire </span></li><li><span>l’objet en est capable</span></li></ul><h3 id='est-ce-que-linterface-permet-à-lutilisateur-de-faire-ce-quil-veut'><span>Est-ce que l’interface permet à l’utilisateur de faire ce qu’il veut?</span></h3><p><span>plus précisement:</span></p><h3 id='dans-quelle-mesure-linterface-permet-t--elle-à-lutilisateur-de-faire-ce-quil-veut'><span>Dans quelle mesure l&#39;interface permet-t- elle à l&#39;utilisateur de faire ce qu&#39;il veut?</span></h3><hr /><h4 id='definition-usability-1'><span>Definition: Usability </span></h4><p><span>The </span><strong><span>degree</span></strong><span> to which a product can be </span><strong><span>used</span></strong><span> by specific users, to accomplish precise goals with effectiveness, effiency </span><em><span>and</span></em><span> satisfaction.</span></p><ul><li><strong><span>Effectiveness:</span></strong><span> the product allows the user to reach the end goal that was expected.</span></li><li><strong><span>Efficiency</span></strong><span>: the user reaches the end result with as little effort or little time as possible.</span></li><li><strong><span>Satisfaction</span></strong><span>: comfort from the user/positive (subjective) feedback about the experience.</span></li></ul><h4 id='the-importance-of-usability'><strong><span>The importance of usability</span></strong></h4><ul><li><p><span>The product sells better </span></p><ul><li><span>The iPhone vs. IBM Simon</span></li></ul></li><li><p><span>Unusable websites are often abandoned</span></p><ul><li><span>Source of frustration and often source of failure</span></li></ul></li><li><p><span>Badly used objects can be dangerous </span></p><p>&nbsp;</p><p><img src="image-20220224051154160.png"></p></li></ul><h4 id='the-responsibility-of-making-something-usable'><span>The responsibility of making something usable</span></h4><p><span>...goes to the designer</span></p><p>&nbsp;</p><h4 id='mental-and-physical-capabilities-of-a-human-user'><span>Mental and physical capabilities of a human user </span></h4><p>&nbsp;</p><ul><li><span>l</span><img src="image-20220224051224616.png" style="float: right;" height="150em;"><span>a perception (visuelle, tactile, auditive)</span></li><li><span>la mémoire</span></li><li><span>l’interprétation des informations cognitifs</span></li><li><span>Prise des décisions</span></li><li><span>la motricité, i.e., d’interagir physiquement avec les machines</span></li></ul><p><span>(all but the last one )</span></p><p>&nbsp;</p><h5 id='examples-of-theoretical-models-that-simplify-and-formalize-the-process-of-conception-that-takes-into-account-these-cognitive-and-motor-processes-from-above'><span>Examples of theoretical models that simplify and formalize the process of conception that takes into account these cognitive and motor processes (from above)</span></h5><p>&nbsp;</p><p><img src="image-20220224051410797.png"></p><p>&nbsp;</p><hr /><h4 id='getting-to-know-the-user'><span>Getting to know the user </span></h4><ul><li><span>les objectifs</span></li><li><span>les connaissances</span></li><li><span>la terminologie</span></li><li><span>la façon de travailler</span></li><li><span>les éventuelles limitations de perception</span></li></ul><h5 id='how-do-we-find-this-out'><span>How do we find this out?</span></h5><ul><li><strong><span>Reflection</span></strong><span>: think about how hanita would use this UI</span></li><li><strong><span>Observation</span></strong><span>: observe hanita using her apps</span></li><li><strong><span>Surveys</span></strong><span>: ask hanita why she do this </span></li><li><strong><span>Usage scenarios:</span></strong><span> imagine hypothetical hanita with hypothetical UI</span></li></ul><hr /><h3 id='development-and-usability'><span>Development and usability</span></h3><p><span> Analysing to better...</span></p><ul><li><span>Understand human performance</span><img src="image-20220224051457621.png" style="float: right;" width="300px;"></li><li><span>Getting to know the user</span></li></ul><h6 id='however-creating-a-good-ui-from-the-first-go-is-highly-unlikely'><span>However, creating a good UI from the first go is highly </span><u><span>unlikely</span></u></h6><h3 id='enter-iterative-development'><span>...Enter: iterative development </span></h3><p><span>Design → Prototype → Evaluation</span></p><h4 id='why-is-it-so-hard-to-conceive-good-uis'><span>Why is it so hard to conceive good UIs?</span></h4><ul><li><span>You&#39;re not the user and can&#39;t put yourself in their shoes as a programmer </span></li><li><span>The user is </span><strong><span>always</span></strong><span> right: recurrent problems are blamed on the system</span></li><li><span>...But the user </span><em><span>isn&#39;t</span></em><span> always right: users aren&#39;t always designers. They don&#39;t always know what&#39;s best for them.</span></li></ul><hr /><hr /><h2 id='performance-humaine'><span>Performance humaine </span></h2><h3 id='perception-mémoire-motricité'><span>Perception, mémoire, motricité</span></h3><h5 id='most-problems-with-interfaces-are-due-to-the-designer-not-recognizing-the-limitations-and-tendency-to-be-wrong-of-humans'><span>MOST problems with interfaces are due to the designer not recognizing the </span><u><span>limitations and tendency to be wrong</span></u><span> of humans</span></h5><h5 id='→-mistake-because-of-the-design-not-human-error'><span style=" background: transparent; background-image: linear-gradient(
+    to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em;"><span>→ Mistake because of the </span><strong><span>DESIGN</span></strong><span>, </span><strong><u><span>NOT</span></u></strong><span> human error</span></span></h5><p>&nbsp;</p><h3 id='the-myth-of-human-error'><span>The myth of human error </span></h3><p><span>Most humans are imperfect &amp; inprevisible </span></p><ul><li><span>Bad memory</span></li><li><span>We don&#39;t see things that are right there</span></li><li><span>We&#39;re really confused</span></li><li><span>We tire ourselves and become annoying </span></li></ul><h3 id='whats-actually-to-blame'><span>What&#39;s actually to blame</span></h3><ul><li><p><strong><span>Functionality</span></strong><span> problem : what are the functions of the object? are they doing what i want them to do?</span></p></li><li><p><strong><span>Visibility</span></strong><span>: what&#39;s the current mode? control sequence: what control sequence must I do to obtain what I want?</span></p></li><li><p><span> </span><span style=" background: transparent; background-image: linear-gradient(
+    to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><strong><u><span>Feedback</span></u></strong><span>: how do I know if my operations went well? (!!!!)</span></span></p><ul><li><span>How do i know my button clicked properly??</span></li></ul></li></ul><h3 id='goals-of-ux-user-experienceusability'><span>Goals of UX (User eXperience)/Usability</span></h3><p><img src="image-20220224051535725.png"></p><p>&nbsp;</p><h3 id='✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨'><span>✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨</span></h3><h3 id='-1'><img src="image-20220224042747232.png" style="float:left;" width="200px"><span>  </span></h3><h3 id='eesusm-→-efficacity-efficiency-security-usability-simplicity-of-learning-memorability'><strong><span>EE</span><u><span>SUS</span></u><span>M</span></strong><span> → </span><strong><span>E</span></strong><span>fficacity, </span><strong><span>E</span></strong><span>fficiency, </span><strong><span>S</span></strong><span>ecurity, </span><strong><span>U</span></strong><span>sability, </span><strong><span>S</span></strong><span>implicity of Learning, </span><strong><span>M</span></strong><span>emorability </span></h3><p>&nbsp;</p><p><span>EEEEE </span><em><span>sus</span></em><span> MMMMMMMMM</span></p><h3 id='✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨'><span>✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨</span></h3><h4 id='definition-usability-2'><span style=" background: transparent; background-image: linear-gradient(to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Definition: Usability</span></span></h4><p><span>The </span><strong><span>degree</span></strong><span> to which a product can be </span><strong><span>used</span></strong><span> by specific users, to accomplish precise goals with effectiveness, effiency </span><em><span>and</span></em><span> satisfaction.</span></p><ul><li><strong><span>Effectiveness:</span></strong><span> the product allows the user to reach the end goal that was expected.</span></li><li><strong><span>Efficiency</span></strong><span>: the user reaches the end result with as little effort or little time as possible.</span></li><li><strong><span>Satisfaction</span></strong><span>: comfort from the user/positive (subjective) feedback about the experience.</span></li></ul><ul><li><strong><span>Simplicity of learning</span></strong><span>: the ease at which the users get used to and use the surface </span></li><li><strong><span>Visibility</span></strong><span>: the ease to </span><u><strong><span>see</span></strong><span> and </span><strong><span>understand</span></strong><span> the state</span></u><span> of the system </span></li><li><strong><span>Errors</span></strong><span>:  measure of the quantitity of these, as well as their impact</span></li><li><span style="color: gray;"><strong><span>Memorability</span></strong><span> : the capacity to remember how to use the interface</span></span></li></ul><h4 id='where-do-designers-go-wrong'><span>Where do designers go wrong? </span></h4><ul><li><span>They fail to understand the </span><strong><span>range/variety</span></strong><span> of </span><strong><span>uses</span></strong><span> and their </span><strong><span>limitations</span></strong></li><li><span>They don&#39;t foresee the different </span><strong><span>contexts</span></strong><span> for use </span></li><li><span>They </span><strong><span>don&#39;t provide enough detailed instructions</span></strong><span> of how to use it </span></li><li><span>They </span><strong><span>don&#39;t communicate what was done, or don&#39;t provide any feedback</span></strong><span> at all (lack of feedback)</span></li></ul><h4 id='why-is-design-so-hard'><span>Why is design so hard?</span></h4><h5 id='tasks-are-complex-and-hard-to-define'><span>Tasks are complex and hard to define </span></h5><ul><li><span>the machine doesn&#39;t understand the goal of the user</span></li><li><span style=" background: transparent; background-image: linear-gradient(to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>how to distribute the tasks/responsibilities between the machine and the user? (!!!)</span></span></li></ul><h5 id='tasks-are-complex-and-unpredictable'><span>Tasks are complex and unpredictable </span></h5><ul><li><strong><span>Users are often indecisive</span></strong><span> </span></li><li><span>They use things in unpredictable ways </span></li></ul><h5 id='tasks-are-getting-more-and-more-complex'><span>Tasks are getting more and more complex </span></h5><ul><li><span>The </span><strong><span>amount</span></strong><span> of things to control is increasing constantly(!)</span></li><li><strong><span>Feedback</span></strong><span> is more complex, </span><strong><span>less natural/intuitive</span></strong><span> </span></li><li><strong><span>Errors </span></strong><span> are more serious/have more ramifications </span></li></ul><h5 id='the-pressure-of-the-market'><span>The pressure of the market </span></h5><ul><li><p><span>Adding functionalities isn&#39;t expensive (lies but ok)</span></p></li><li><p><span>Adding controls/feedback is tho</span></p></li><li><p><span>Design time is expeez</span></p></li><li><p><span>Some consumers prefer a cost/visual design(?)</span></p><p>&nbsp;</p></li></ul><h4 id='definition-performance--human-cognition'><span>Definition: Performance &amp; Human cognition </span></h4><p><span>The set of mental and physical capacities linked to cognitive processes </span></p><p><strong><span>an actual example: </span></strong><span> At which speed can we press a button? </span></p><p><strong><u><span>not</span></u><span> an example:</span></strong><span> how long can we survive at -24 C? (unrelated to us being mentally capable or not.)</span></p><h4 id='definition-cognition'><span>Definition: Cognition </span></h4><p><span>The set of </span><strong><span>mental processes</span></strong><span> that contribute to the </span><strong><span>functionning of knowledge</span></strong></p><ul><li><span>Acquiring knowledge</span></li><li><span>Using knowledge </span></li></ul><h5 id='different-types-of-knowledge'><span>Different types of knowledge:</span></h5><ul><li><span>Know-how (procedure)</span></li><li><span>Technical knowledge (the facts)</span></li><li><span>Languages</span></li><li><span>etc.</span></li></ul><p><strong><span>Components of cognition</span></strong></p><ul><li><span>Perception</span></li><li><span>Language</span></li><li><span>Learning</span></li><li><span>Memory</span></li><li><span>Problem-solving</span></li><li><span>Decision-taking</span></li><li><span>Attention</span></li></ul><p>&nbsp;</p><h4 id='man-vs-computer'><span>Man vs. Computer:</span></h4><h5 id='pros-of-hooman'><span>Pros of hooman: </span></h5><ul><li><p><span>Détection de signal sous bruit</span></p></li><li><p><span>Reconnaissance de</span></p><p><span>configurations (p.e., scènes)</span></p><p><span>complexes</span></p></li><li><p><span>Concentration sur l&#39;essentiel</span></p></li><li><p><span>Adaptation à des situations</span></p><p><span>inattendues</span></p></li><li><p><span>Aptitude à apprendre</span></p></li><li><p><span>Mémoriser des informations</span></p><p><span>cohérentes</span></p></li><li><p><span>Intuition</span></p></li></ul><h5 id='pros-of-computah'><span>Pros of computah</span></h5><ul><li><span>Détection/reconnaissance de signaux connus</span></li></ul><ul><li><span>Réaction </span><strong><span>rapide et fiable</span></strong><span> aux signaux connus</span></li></ul><ul><li><span>Supériorité </span><strong><span>si</span></strong><span> les problèmes peuvent être formulés algorithmiquement</span></li></ul><ul><li><span>Mesurer et compter</span></li></ul><ul><li><span>Stocker de grandes quantités de données incohérentes</span></li><li><span>Répétition fiable et sans fatigue des opérations</span></li></ul><p>&nbsp;</p><h4 id='motor-and-sensorial-systems'><span>Motor and sensorial systems </span></h4><h5 id='systèmes-sensoriels'><span>Systèmes sensoriels</span></h5><ul><li><span>Équilibre et accélération (vestibulaire)</span></li><li><span>Conscience du corps</span>
+<span> (proprioception, sens kinesthésique)</span></li><li><span>Température</span>
+<span> (réception de chaleur)</span></li></ul><h5 id='systèmes-moteurs'><span>Systèmes moteurs</span></h5><ul><li><span>Bras, mains, doigts </span></li><li><span>Tête, yeux</span></li><li><span>Système vocal </span></li><li><span>Jambes, pieds, orteils </span></li><li><span>Mâchoire, langue</span></li></ul><p>&nbsp;</p><h4 id='model-human-processor-mhp-perceptuel-input-cognitif-processing-moteur-output'><span style=" background: transparent; background-image: linear-gradient(to right,rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span> Model human processor (MHP): perceptuel (input), cognitif (processing), moteur (output)</span></span></h4><p><img src="image-20220224053645433.png" width="400px" style="float:left; margin: 20px;"><span> </span></p><p><span>Modèle informatique donnant une compréhension abstraite du cycle cognitif </span></p><ul><li><span>perception (</span><em><strong><span>input</span></strong></em><span>)</span></li></ul><ul><li><span>traitement (</span><em><strong><span>processing</span></strong></em><span>) </span></li><li><span>action (</span><em><strong><span>output</span></strong></em><span>)</span></li></ul><p><strong><span>Trois processeurs avec mémoire associée</span></strong><span> </span></p><ol start='' ><li><p><span>Processeur </span><strong><span>perceptuel</span></strong></p><p><span>		</span><span>Capteurs et tampons</span></p><ol start='2' ><li><span>Processeur </span><strong><span>cognitif</span></strong>
+<span> </span><span>		</span><span>Travail sur contenu de la mémoire de travail</span></li></ol><ol start='3' ><li><p><span>Processeur </span><strong><span>moteur</span></strong><span> </span></p><p><span>	</span><span>Génère des mouvements</span></p></li></ol></li></ol><p><span>Chaque processeur a un temps d&#39;exécution associé</span>
+<span> Le temps d&#39;exécution globale du système est la somme des trois</span></p><p>&nbsp;</p><h4 id='la-perception-de-couleur'><span style="background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;  color: transparent;-webkit-text-stroke: 0.5px black;"><span>La perception de couleur</span></span></h4><p><img src="image-20220224055005372.png"></p><p>&nbsp;</p><h4 id='implications-pour-la-perception---lecture'><span>Implications pour la perception - lecture</span></h4><p><img src="image-20220224054908888.png"></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n1489" cid="n1489" mdtype="math_block" data-math-tag-before="0" data-math-labels="[]" data-math-tag-after="0"><div class="md-rawblock-container md-math-container" contenteditable="false" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="61.123ex" height="2.059ex" role="img" focusable="false" viewBox="0 -705 27016.3 910" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.464ex;"><defs><path id="MJX-91-TEX-I-1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path><path id="MJX-91-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-91-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-91-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-91-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-91-TEX-I-1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path id="MJX-91-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-91-TEX-N-2248" d="M55 319Q55 360 72 393T114 444T163 472T205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346Q609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452Q722 386 675 338T555 289Q514 289 468 310T388 357T308 404T224 426Q164 426 125 393T83 318Q81 289 69 289Q55 289 55 319ZM55 85Q55 126 72 159T114 210T163 238T205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112Q609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123T308 170T224 192Q164 192 125 159T83 84Q80 55 69 55Q55 55 55 85Z"></path><path id="MJX-91-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-91-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJX-91-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-91-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-91-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-91-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-91-TEX-I-1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path><path id="MJX-91-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path id="MJX-91-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-91-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-91-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-91-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-91-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path id="MJX-91-TEX-N-20" d=""></path><path id="MJX-91-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"></path><path id="MJX-91-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path id="MJX-91-TEX-N-75" d="M383 58Q327 -10 256 -10H249Q124 -10 105 89Q104 96 103 226Q102 335 102 348T96 369Q86 385 36 385H25V408Q25 431 27 431L38 432Q48 433 67 434T105 436Q122 437 142 438T172 441T184 442H187V261Q188 77 190 64Q193 49 204 40Q224 26 264 26Q290 26 311 35T343 58T363 90T375 120T379 144Q379 145 379 161T380 201T380 248V315Q380 361 370 372T320 385H302V431Q304 431 378 436T457 442H464V264Q464 84 465 81Q468 61 479 55T524 46H542V0Q540 0 467 -5T390 -11H383V58Z"></path><path id="MJX-91-TEX-N-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path id="MJX-91-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-91-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path id="MJX-91-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path id="MJX-91-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D453" xlink:href="#MJX-91-TEX-I-1D453"></use></g><g data-mml-node="mi" transform="translate(550,0)"><use data-c="1D456" xlink:href="#MJX-91-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(895,0)"><use data-c="1D465" xlink:href="#MJX-91-TEX-I-1D465"></use></g><g data-mml-node="mi" transform="translate(1467,0)"><use data-c="1D44E" xlink:href="#MJX-91-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(1996,0)"><use data-c="1D461" xlink:href="#MJX-91-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(2357,0)"><use data-c="1D456" xlink:href="#MJX-91-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(2702,0)"><use data-c="1D45C" xlink:href="#MJX-91-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(3187,0)"><use data-c="1D45B" xlink:href="#MJX-91-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(4064.8,0)"><use data-c="2248" xlink:href="#MJX-91-TEX-N-2248"></use></g><g data-mml-node="mn" transform="translate(5120.6,0)"><use data-c="32" xlink:href="#MJX-91-TEX-N-32"></use><use data-c="33" xlink:href="#MJX-91-TEX-N-33" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-91-TEX-N-30" transform="translate(1000,0)"></use></g><g data-mml-node="mi" transform="translate(6620.6,0)"><use data-c="1D45A" xlink:href="#MJX-91-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(7498.6,0)"><use data-c="1D460" xlink:href="#MJX-91-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(7967.6,0)"><use data-c="2C" xlink:href="#MJX-91-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(8412.2,0)"><use data-c="1D460" xlink:href="#MJX-91-TEX-I-1D460"></use></g><g data-mml-node="mi" transform="translate(8881.2,0)"><use data-c="1D44E" xlink:href="#MJX-91-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(9410.2,0)"><use data-c="1D450" xlink:href="#MJX-91-TEX-I-1D450"></use></g><g data-mml-node="mi" transform="translate(9843.2,0)"><use data-c="1D450" xlink:href="#MJX-91-TEX-I-1D450"></use></g><g data-mml-node="mi" transform="translate(10276.2,0)"><use data-c="1D44E" xlink:href="#MJX-91-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(10805.2,0)"><use data-c="1D451" xlink:href="#MJX-91-TEX-I-1D451"></use></g><g data-mml-node="mi" transform="translate(11325.2,0)"><use data-c="1D452" xlink:href="#MJX-91-TEX-I-1D452"></use></g><g data-mml-node="mo" transform="translate(12069,0)"><use data-c="2248" xlink:href="#MJX-91-TEX-N-2248"></use></g><g data-mml-node="mn" transform="translate(13124.8,0)"><use data-c="33" xlink:href="#MJX-91-TEX-N-33"></use><use data-c="30" xlink:href="#MJX-91-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="mi" transform="translate(14124.8,0)"><use data-c="1D45A" xlink:href="#MJX-91-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(15002.8,0)"><use data-c="1D460" xlink:href="#MJX-91-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(15749.6,0)"><use data-c="2192" xlink:href="#MJX-91-TEX-N-2192"></use><use data-c="2248" xlink:href="#MJX-91-TEX-N-2248" transform="translate(1000,0)"></use></g><g data-mml-node="mn" transform="translate(17805.3,0)"><use data-c="32" xlink:href="#MJX-91-TEX-N-32"></use><use data-c="35" xlink:href="#MJX-91-TEX-N-35" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-91-TEX-N-30" transform="translate(1000,0)"></use></g><g data-mml-node="mtext" transform="translate(19305.3,0)"><use data-c="6D" xlink:href="#MJX-91-TEX-N-6D"></use><use data-c="73" xlink:href="#MJX-91-TEX-N-73" transform="translate(833,0)"></use><use data-c="20" xlink:href="#MJX-91-TEX-N-20" transform="translate(1227,0)"></use><use data-c="70" xlink:href="#MJX-91-TEX-N-70" transform="translate(1477,0)"></use><use data-c="6F" xlink:href="#MJX-91-TEX-N-6F" transform="translate(2033,0)"></use><use data-c="75" xlink:href="#MJX-91-TEX-N-75" transform="translate(2533,0)"></use><use data-c="72" xlink:href="#MJX-91-TEX-N-72" transform="translate(3089,0)"></use><use data-c="20" xlink:href="#MJX-91-TEX-N-20" transform="translate(3481,0)"></use><use data-c="31" xlink:href="#MJX-91-TEX-N-31" transform="translate(3731,0)"></use><use data-c="32" xlink:href="#MJX-91-TEX-N-32" transform="translate(4231,0)"></use><use data-c="20" xlink:href="#MJX-91-TEX-N-20" transform="translate(4731,0)"></use><use data-c="6C" xlink:href="#MJX-91-TEX-N-6C" transform="translate(4981,0)"></use><use data-c="65" xlink:href="#MJX-91-TEX-N-65" transform="translate(5259,0)"></use><use data-c="74" xlink:href="#MJX-91-TEX-N-74" transform="translate(5703,0)"></use><use data-c="74" xlink:href="#MJX-91-TEX-N-74" transform="translate(6092,0)"></use><use data-c="72" xlink:href="#MJX-91-TEX-N-72" transform="translate(6481,0)"></use><use data-c="65" xlink:href="#MJX-91-TEX-N-65" transform="translate(6873,0)"></use><use data-c="73" xlink:href="#MJX-91-TEX-N-73" transform="translate(7317,0)"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>f</mi><mi>i</mi><mi>x</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>≈</mo><mn>230</mn><mi>m</mi><mi>s</mi><mo>,</mo><mi>s</mi><mi>a</mi><mi>c</mi><mi>c</mi><mi>a</mi><mi>d</mi><mi>e</mi><mo>≈</mo><mn>30</mn><mi>m</mi><mi>s</mi><mo stretchy="false">→≈</mo><mn>250</mn><mtext>ms pour 12 lettres</mtext></math></mjx-assistive-mml></mjx-container></div></div><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n1621" cid="n1621" mdtype="math_block" data-math-tag-before="0" data-math-labels="[]" data-math-tag-after="0"><div class="md-rawblock-container md-math-container" contenteditable="false" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="23.031ex" height="5.115ex" role="img" focusable="false" viewBox="0 -1370 10179.6 2261" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -2.016ex;"><defs><path id="MJX-107-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-107-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-107-TEX-I-1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path id="MJX-107-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-107-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-107-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-107-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-107-TEX-I-1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path><path id="MJX-107-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-107-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-107-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJX-107-TEX-N-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-107-TEX-N-31"></use><use data-c="32" xlink:href="#MJX-107-TEX-N-32" transform="translate(500,0)"></use></g><g data-mml-node="mfrac" transform="translate(1000,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><use data-c="1D459" xlink:href="#MJX-107-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(298,0)"><use data-c="1D452" xlink:href="#MJX-107-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(764,0)"><use data-c="1D461" xlink:href="#MJX-107-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1125,0)"><use data-c="1D461" xlink:href="#MJX-107-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1486,0)"><use data-c="1D45F" xlink:href="#MJX-107-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(1937,0)"><use data-c="1D452" xlink:href="#MJX-107-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(2403,0)"><use data-c="1D460" xlink:href="#MJX-107-TEX-I-1D460"></use></g></g><g data-mml-node="mrow" transform="translate(596,-686)"><g data-mml-node="mi"><use data-c="1D450" xlink:href="#MJX-107-TEX-I-1D450"></use></g><g data-mml-node="mi" transform="translate(433,0)"><use data-c="1D466" xlink:href="#MJX-107-TEX-I-1D466"></use></g><g data-mml-node="mi" transform="translate(923,0)"><use data-c="1D450" xlink:href="#MJX-107-TEX-I-1D450"></use></g><g data-mml-node="mi" transform="translate(1356,0)"><use data-c="1D459" xlink:href="#MJX-107-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(1654,0)"><use data-c="1D452" xlink:href="#MJX-107-TEX-I-1D452"></use></g></g><rect width="3072" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(4589.8,0)"><use data-c="2192" xlink:href="#MJX-107-TEX-N-2192"></use></g><g data-mml-node="mn" transform="translate(5867.6,0)"><use data-c="34" xlink:href="#MJX-107-TEX-N-34"></use><use data-c="38" xlink:href="#MJX-107-TEX-N-38" transform="translate(500,0)"></use></g><g data-mml-node="mfrac" transform="translate(6867.6,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><use data-c="1D459" xlink:href="#MJX-107-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(298,0)"><use data-c="1D452" xlink:href="#MJX-107-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(764,0)"><use data-c="1D461" xlink:href="#MJX-107-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1125,0)"><use data-c="1D461" xlink:href="#MJX-107-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1486,0)"><use data-c="1D45F" xlink:href="#MJX-107-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(1937,0)"><use data-c="1D452" xlink:href="#MJX-107-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(2403,0)"><use data-c="1D460" xlink:href="#MJX-107-TEX-I-1D460"></use></g></g><g data-mml-node="mrow" transform="translate(972,-686)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-107-TEX-I-1D460"></use></g><g data-mml-node="mi" transform="translate(469,0)"><use data-c="1D452" xlink:href="#MJX-107-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(935,0)"><use data-c="1D450" xlink:href="#MJX-107-TEX-I-1D450"></use></g></g><rect width="3072" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mn>12</mn><mfrac><mrow><mi>l</mi><mi>e</mi><mi>t</mi><mi>t</mi><mi>r</mi><mi>e</mi><mi>s</mi></mrow><mrow><mi>c</mi><mi>y</mi><mi>c</mi><mi>l</mi><mi>e</mi></mrow></mfrac><mo stretchy="false">→</mo><mn>48</mn><mfrac><mrow><mi>l</mi><mi>e</mi><mi>t</mi><mi>t</mi><mi>r</mi><mi>e</mi><mi>s</mi></mrow><mrow><mi>s</mi><mi>e</mi><mi>c</mi></mrow></mfrac></math></mjx-assistive-mml></mjx-container></div></div><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n1623" cid="n1623" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-rawblock-container md-math-container" contenteditable="false" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="21.494ex" height="4.676ex" role="img" focusable="false" viewBox="0 -1370 9500.6 2067" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.577ex;"><defs><path id="MJX-109-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-109-TEX-I-1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path id="MJX-109-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-109-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-109-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-109-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-109-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-109-TEX-I-1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path id="MJX-109-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-109-TEX-N-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path id="MJX-109-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-109-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-109-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="35" xlink:href="#MJX-109-TEX-N-35"></use></g><g data-mml-node="mfrac" transform="translate(500,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><use data-c="1D459" xlink:href="#MJX-109-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(298,0)"><use data-c="1D452" xlink:href="#MJX-109-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(764,0)"><use data-c="1D461" xlink:href="#MJX-109-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1125,0)"><use data-c="1D461" xlink:href="#MJX-109-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1486,0)"><use data-c="1D45F" xlink:href="#MJX-109-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(1937,0)"><use data-c="1D452" xlink:href="#MJX-109-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(2403,0)"><use data-c="1D460" xlink:href="#MJX-109-TEX-I-1D460"></use></g></g><g data-mml-node="mrow" transform="translate(794,-686)"><g data-mml-node="mi"><use data-c="1D45A" xlink:href="#MJX-109-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(878,0)"><use data-c="1D45C" xlink:href="#MJX-109-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(1363,0)"><use data-c="1D461" xlink:href="#MJX-109-TEX-I-1D461"></use></g></g><rect width="3072" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(4089.8,0)"><use data-c="2192" xlink:href="#MJX-109-TEX-N-2192"></use></g><g data-mml-node="mn" transform="translate(5367.6,0)"><use data-c="36" xlink:href="#MJX-109-TEX-N-36"></use><use data-c="30" xlink:href="#MJX-109-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-109-TEX-N-30" transform="translate(1000,0)"></use></g><g data-mml-node="mfrac" transform="translate(6867.6,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><use data-c="1D45A" xlink:href="#MJX-109-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(878,0)"><use data-c="1D45C" xlink:href="#MJX-109-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(1363,0)"><use data-c="1D461" xlink:href="#MJX-109-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(1724,0)"><use data-c="1D460" xlink:href="#MJX-109-TEX-I-1D460"></use></g></g><g data-mml-node="mrow" transform="translate(405,-686)"><g data-mml-node="mi"><use data-c="1D45A" xlink:href="#MJX-109-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(878,0)"><use data-c="1D456" xlink:href="#MJX-109-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(1223,0)"><use data-c="1D45B" xlink:href="#MJX-109-TEX-I-1D45B"></use></g></g><rect width="2393" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mn>5</mn><mfrac><mrow><mi>l</mi><mi>e</mi><mi>t</mi><mi>t</mi><mi>r</mi><mi>e</mi><mi>s</mi></mrow><mrow><mi>m</mi><mi>o</mi><mi>t</mi></mrow></mfrac><mo stretchy="false">→</mo><mn>600</mn><mfrac><mrow><mi>m</mi><mi>o</mi><mi>t</mi><mi>s</mi></mrow><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></mfrac></math></mjx-assistive-mml></mjx-container></div></div><h4 id='attention-visuelle-summary'><span>Attention visuelle: summary</span></h4><p><strong><span>TLDR:</span></strong><span> you need to rly pay attention to not miss everything so you really have to keep this in mind for your users. </span></p><ul><li><span>Il y a des lacunes remarquables dans notre perception</span></li></ul><ul><li><p><span>L&#39;interprétation humaine du champ visuel est plus restrictive/clairsemée que ne le suggère l&#39;expérience subjective de &quot;voir&quot;.</span></p></li><li><p><span>La perception des objets nécessite des ressources considérables</span></p><p><span> </span><span style=" background: transparent; background-image: linear-gradient(to right,rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Attention is necessary to see change(!!!!)</span></span></p></li><li><h3 id='si-lattention-est-ailleurs-des-changements-peuvent-être-manqués'><span>Si l&#39;attention est ailleurs, des changements peuvent être manqués</span></h3></li></ul><h4 id='stroop-effect-like-that-lil-game-in-brain-age'><span>Stroop effect (like that lil game in brain age)</span></h4><p><img src="image-20220224055804419.png"></p><hr /><hr /><p>&nbsp;</p><h2 id='principes-de-design'><span>Principes de design</span></h2><h3 id='facilité-dapprendre-visibilité-erreurs-efficience'><span>Facilité d’apprendre, visibilité, erreurs, efficience</span></h3><p><img src="image-20220224060055296.png" style="float:left; margin: 20px;" width="200"><span> &lt;- pretty much the holy bible by our lord n savior mr. don norman </span></p><p>&nbsp;</p><h4 id='definition-discoverability'><span>	</span><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span> Definition: discoverability </span></span></h4><p><span> L&#39;utilisateur peut-il savoir</span></p><ul><li><p><span>ce que le produit fait?</span></p><ul><li><span>comment le produit fonctionne? </span></li><li><span>quelles opérations sont possibles?</span></li></ul><p><strong><span>TLDR</span></strong><span>: </span><u><span>can the user figure it out by themselves?</span></u></p><hr /><p>&nbsp;</p></li></ul><h2 id='key-concepts'><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3));padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Key concepts:</span></span></h2><h4 id='capacités-daction-affordances-→-you-afford-a-use-to-it'><span>Capacités d’action (affordances) → you afford a use to it(?)</span></h4><p><em><span>Capacité d’action qu&#39;un utilisateur peut effectuer avec un objet</span></em></p><p><span>La </span><u><strong><span>relation</span></strong></u><span> </span><strong><span>entre l’utilisateur et l’objet</span></strong><span> qui déterminent </span><strong><u><span>comment</span></u></strong><span> l’objet peut être </span><strong><u><span>utilisé</span></u></strong></p><h5 id='some-affordances-are-visible-some-arent-affordances-that-are-visible-are-the-central-indicators-of-an-objects-use-eg-a-light-switch'><span>Some affordances are visible, some aren&#39;t(!!). Affordances that are visible are the </span><strong><u><span>central indicators</span></u></strong><span> of an object&#39;s use, eg a light switch:</span></h5><p><img src="image-20220224062256829.png" width="300px"></p><h5 id='affordances-in-mobile-apps-→-gestures'><span>Affordances in mobile apps → </span><strong><u><span>gestures</span></u></strong></h5><p><img src="image-20220224062952680.png" width="80%"></p><p><span>ie: a button is meant to be </span><em><span>tapppppped</span></em><span> (taptaptap) (tap tap revenge)</span></p><p><span>A wise person once said: </span></p><blockquote><p><strong><span>An affordance is something an object (or dashboard) can do.</span></strong><span> </span><strong><span>A tap/faucet can run hot or cold water, for example.</span></strong><span> </span><strong><span>A signifier is an indicator of some sort</span></strong><span>. In our tap example, this might be red/blue dots signifying which way to turn the tap to get hot or cold water.</span></p></blockquote><h4 id='anti-affordance'><span>Anti-affordance</span></h4><p><strong><u><span>Some affordance removed on purpose,</span></u></strong><span> ie those benches that dont allow ppl to lie down. In our mobile apps, an example of anti-affordance is the </span><code>disabled</code><span> attribute on a button </span></p><p>&nbsp;</p><h4 id='signifiants-signifiers'><span>Signifiants (signifiers)</span></h4><p><span>Les </span><em><strong><span>signifiants</span></strong></em><span> sont utilisé pour rendre visible les affordances:</span></p><ul><li><span>ils indiquent quelles actions sont possibles, et (</span><em><span>souvent</span></em><span>)</span></li><li><span>où et comment ils devraient être appliqués</span></li></ul><p><img src="image-20220224064028966.png"></p><p><strong><span>TLDR:</span></strong><span> Signifiers help us make an affordance that&#39;s not very obvious to the user, visible. Example: the </span><strong><span>hamburger</span></strong><span> icon! </span></p><h5 id='signalisation'><strong><span>Signalisation</span></strong></h5><p><span>Plus de signifiants ≠ mieux </span></p><p><span>	</span><span>→ confusion avec d&#39;autres affordances</span></p><p><span>	</span><span>→ défaut de découvrir l&#39;affordance (we get annoyed seeing so many signs and we just try to figure it out ourselves)</span></p><h5 id='→--our-bois-the-norman-doors'><span>→  Our bois the norman doors </span></h5><blockquote><p><span> The Norman door is basically </span><strong><span>any door that&#39;s confusing or difficult to use</span></strong><span>. </span></p></blockquote><h4 id='correspondances-mappingneural-mapping'><span>Correspondances (mapping/neural mapping)</span></h4><blockquote><p><span>The term </span><strong><span>natural mapping</span></strong><span> comes from proper and natural arrangements for the relations between controls and their movements to the outcome from such action into the world.  </span></p></blockquote><p><span>→ basically a kind of logical relationship between a control and the controlled object..?</span></p><p><strong><span>ie</span></strong><span>: a driving wheel that turns, steering the car in the spin direction </span></p><h5 id='correspondance-naturelle'><span>Correspondance naturelle</span></h5><p><span>Prendre avantage des analogies au monde physique ou aux standards culturels.</span></p><p><span>ie: </span></p><p><img src="image-20220224064802426.png"></p><p><span>and</span></p><p><img src="image-20220224064920099.png" width="400px"></p><p><span>(note how it&#39;s the same placement between the burners and their respective switches)</span></p><h4 id='contraintes'><span>Contraintes</span></h4><h5 id='physical-relationship-between-elements'><span>Physical relationship between elements</span></h5><p><span>Contrainte sur la </span><strong><u><span>relation physique</span></u></strong><span> entre les éléments (!!!!!)</span><img src="image-20220224065310771.png" style="float:right;" width="600px;"><span> </span></p><ul><li><p><span>principalement lié a la </span><strong><u><span>forme</span></u></strong><span> </span></p></li><li><p><span>peut aider si bien fait</span></p></li><li><p><span>peut nuire si mal fait</span></p><p>&nbsp;</p></li></ul><h4 id='rétroaction-feedback'><span>Rétroaction (feedback)</span></h4><p><span>Principe du feedback: on doit montrer à l&#39;usager </span><strong><span>l’effet de ses actions</span></strong><span> et les résultats qui en découlent.</span></p><p><span>[self explanatory]</span></p><h4 id='définition-modèles-conceptuels'><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Définition: Modèles conceptuels</span></span></h4><p><strong><span>Une explication, souvent </span><u><span>très simplifiée</span></u><span>, de la façon dont quelque chose fonctionne</span></strong></p><p><span>→ </span><strong><span>Un modèle conceptuel n’a </span><em><span>pas</span></em><span> besoin d’être complet ou même précis</span></strong><span> </span><strong><u><span>tant qu’il est utile</span></u></strong></p><h5 id='modèle-fonctionnel-→-function-intuition'><span>Modèle fonctionnel → function: intuition</span></h5><p><span>On sait quoi faire sans savoir pourquoi</span></p><h5 id='modèle-structurel-→-we-know-the-structurecomponents'><span>Modèle structurel → we know the structure/components </span></h5><p>&nbsp;</p><h5 id='modèles-conceptuels-sont-formés-à-travers'><span>Modèles conceptuels sont formés à travers</span></h5><ul><li><span>des connaissances et hypothèses préexistantes</span></li><li><span>interaction avec l&#39;objet </span></li><li><span>explication</span></li></ul><h4 id='comment-les-gens-font-les-choses'><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>COMMENT LES GENS FONT LES CHOSES</span></span></h4><iframe width="560" height="315" src="https://www.youtube.com/embed/pAOyWFOFhsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><h6 id='un-bon-modèle-conceptuel-est-important-pour-une-interaction-réussie'><span>Un bon modèle conceptuel est important pour une interaction réussie</span></h6><ul><li><span>Explique les étapes nécessaires pour atteindre l&#39;objectif</span></li><li><span>Attentes d&#39;action-réaction (ou entrée-sortie)</span></li><li><span>Interprétation du feedback</span></li><li><span>Savoir quoi faire ensuite</span></li></ul><h6 id='et-sil-y-a-des-problèmes-comment-savoir-si-les-choses-vont-mal-et-où'><span>Et s&#39;il y a des problèmes? Comment savoir si les choses vont mal et où?</span></h6><h6 id='nous-avons-besoin-den-savoir-plus-sur-la-façon-dont-les-gens'><span>Nous avons besoin d&#39;en savoir plus sur la façon dont les gens</span></h6><ul><li><span>décident quoi faire et</span></li><li><span>évaluent les résultats</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><h5 id='les-deux-fossés-dinteraction'><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Les deux fossés d&#39;interaction </span></span></h5><p><em><span>Comment les gens choisissent-ils les actions, comment évaluent-ils leurs résultats?</span></em></p><p><img src="image-20220224070612633.png" width="35%" style="float: left;"><img src="image-20220224070805860.png" width="60%" style="float: right;"></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h5 id='exemple'><span>Exemple</span></h5><p><em><span>But</span></em><span>: plus de lumière</span></p><p><strong><span>Exécution</span></strong></p><ul><li><span>Intention: allumer la lumière</span></li></ul><ul><li><p><span>Séquence d’actions:</span></p><ol><li><span>Se lever</span></li></ol><ol start='2' ><li><span>Aller vers l’interrupteur </span></li><li><span>Utiliser l’interrupteur</span></li></ol></li></ul><ul><li><p><span>Exécution</span></p><p>&nbsp;</p></li></ul><p><em><strong><span>Evaluation</span></strong></em></p><ul><li><span>Perception</span>
+<span> ̶ combien de lumière?</span></li></ul><ul><li><span>Interprétation</span>
+<span>̶ il y a plus de lumière</span></li></ul><ul><li><span>Evaluation</span></li></ul><p><span>	</span><span>̶  C’est assez de lumière pour lire?</span></p><h4 id='les-sept-étapes-de-laction'><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Les sept étapes de l&#39;action</span></span></h4><p><img src="image-20220224071423519.png"></p><p>&nbsp;</p><ul><li><span>L’utilisateur doit toujours être capable de répondre a ces sept questions</span></li><li><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Difficultés de répondre aux questions indiquent problèmes de design</span></span></li></ul><h5 id='analyse-de-la-cause-originelle'><strong><span>ANALYSE DE LA CAUSE ORIGINELLE</span></strong></h5><p><span>L’objectif, est-ce le vrai but ou est-ce un sous-objectif?</span></p><ul><li><p><span>Analyse de la cause originelle </span></p><ul><li><span>plus de lumière</span></li><li><span>lire un livre de recettes</span></li><li><span> cuisiner</span></li><li><span>manger </span></li><li><span>satisfaire la faim</span></li></ul></li></ul><ul><li><span>Les idées disruptives sont souvent trouvées en remettant en question les objectifs, pas les solutions!</span></li></ul><p>&nbsp;</p><p><strong><span>EXEMPLE</span></strong></p><p><span>Est-ce qu’on veut</span>
+<span> • acheteruneperceuse?</span>
+<span> • avoiruntroudanslemur?</span>
+<span> • uneétagèrepourleslivres?</span>
+<span> Et pourquoi pas</span>
+<span> • desétagèresquin’ontpasbesoindeperçerdansle</span></p><p><span>mur?</span>
+<span> • Deslivresquin’ontpasbesoind’étagère?</span></p><p>&nbsp;</p><h4 id='visibilité'><strong><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>VISIBILITÉ</span></span></strong></h4><p><span>Principe fundamental pour la conception d’interfaces</span></p><p><em><span>Comment combler les deux fossés? Rendre les choses visibles!</span></em></p><h2 id='les-sept-principes-de-design-de-mr-don-norman'><span style=" background: transparent; background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3) );padding: 0.2em 0.4em;border-radius: 0.8em 0.3em; padding-left: 0.1em;"><span>Les sept principes de design de mr. don norman</span></span></h2><p>&nbsp;</p><ol><li><h5 id='découvrabilitéil-est-possible-de-déterminer-quelles-actions-sont-possibles-et-quel-est-létat-du-système'><span>Découvrabilité:il est possible de déterminer quelles actions sont possibles et quel est l&#39;état du système.</span></h5></li></ol><ol start='2' ><li><h5 id='feedback-il-y-a-un-feedback-complet-et-continu-sur-le-résultat-des-actions-et-létat-actuel-du-système'><span>Feedback: il y a un feedback complet et continu sur le résultat des actions et l&#39;état actuel du système.</span></h5></li></ol><ol start='3' ><li><h5 id='modèle-conceptuel-le-design-affiche-toutes-les-informations-nécessaires-pour-former-un-bon-modèle-conceptuel'><span>Modèle conceptuel: le design affiche toutes les informations nécessaires pour former un bon modèle conceptuel.</span></h5></li></ol><ol start='4' ><li><h5 id='affordances-les-affordances-appropriées-existent-pour-rendre-les-actions-désirées-possible'><span>Affordances: les affordances appropriées existent pour rendre les actions désirées possible</span></h5></li></ol><ol start='5' ><li><h5 id='signifiants-lutilisation-correcte-des-signifiants-assure-la-découvrabilité-et-que-le-feedback-est-bien-communiquée'><span>Signifiants: l&#39;utilisation correcte des signifiants assure la découvrabilité et que le feedback est bien communiquée.</span></h5></li></ol><ol start='6' ><li><h5 id='correspondance-la-relation-entre-les-contrôles-et-leurs-actions-suit-le-principe-de-correspondance-naturelle'><span>Correspondance: la relation entre les contrôles et leurs actions suit le principe de correspondance naturelle.</span></h5></li></ol><ol start='7' ><li><h5 id='contraintes-lutilisation-des-contraintes-physiques-logiques-et-sémantiques-guide-les-actions-et-facilite-linterprétation'><span>Contraintes: l’utilisation des contraintes physiques, logiques et sémantiques guide les actions et facilite l&#39;interprétation</span></h5></li></ol><hr /><hr /><h2 id='-2'></h2><h2 id='techniques-de-design'><span>Techniques de design</span></h2><h3 id='analyse-de-tâches-prototypage-tests-utilisateur'><span>Analyse de tâches, prototypage, tests utilisateur</span></h3><p>&nbsp;</p><hr /><hr /><h2 id='-3'></h2><h2 id='évaluation'><span>Évaluation</span></h2><h3 id='conception-de-tests-statistiques'><span>Conception de tests, statistiques</span></h3><p>&nbsp;</p><hr /><hr /><h2 id='-4'></h2><h2 id='réalité-virtuelle'><span>Réalité virtuelle</span></h2><h3 id='interaction-personne-robot'><span>Interaction personne-robot</span></h3></div></div>
+</body>
+</html>
