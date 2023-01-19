@@ -2,6 +2,48 @@
 
 <hr/>
 
+## Microdevoir 
+
+==Remise SUR **STUDIUM**, à remettre demain (mercredi)==
+
+==L'interface d'exemple doit **<u>obligatoirement</u>** être une page d'inscription==
+
+Ce n'est pas important si votre remise se fait sur le groupe A ou B, la correction des deux groupes se fait ensemble. 
+
+[Lien aux instructions du devoir](https://docs.google.com/document/d/17Fbyqc9pHNQ7bdZ-4qlNbzFidGXX2WEY0MBjzjFFq90/edit?usp=sharing)
+
+==Si vous n'arrivez pas à trouver vos coéquipier.e.s sur les participants de studium, vous pouvez utiliser outlook de l'UdeM pour chercher les courriels des personnes et leur écrire:==
+
+![image-20230119122156544](assets/image-20230119122156544.png)
+
+
+
+## Instructions pour créer board miro pour votre équipe
+
+Assurez-vous que vous n'êtes pas déjà dans une équipe MIRO avant de créer la votre (vous ne pouvez en créer qu'une avec le plan payant) - si c'est le cas, vous devez partir de l'équipe courante
+
+![image-20230119120949220](assets/image-20230119120949220.png)
+
+Créez une nouvelle équipe 
+
+![image-20230119121222282](assets/image-20230119121222282.png)
+
+Invitez les membres de l'equipe 
+
+![image-20230119121304141](assets/image-20230119121304141.png)
+
+Creez un board pour votre equipe 
+
+![image-20230119121322692](assets/image-20230119121322692.png)
+
+Assurez-vous que lorsque vous partagez votre board avec la correctrice,
+
+![image-20230119121435289](assets/image-20230119121435289.png)
+
+==Que vous lui donnez les permissions de édit (!!!!)==
+
+![image-20230119121451233](assets/image-20230119121451233.png)
+
 ## Plan de la démo
 
 > 1. Concepts importants pour aujourd'hui;
