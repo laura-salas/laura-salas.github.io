@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=B612' rel='stylesheet'>
+<title>Demonstration 2</title>
+<style>
+h2{
+    color: #283618;
+}
+h1{
+    color : #bc6c25;
+    text-align: center;
+}
+.written_content{
+    color : #606c38;
+    font-size: 24px;
+}
+.text_center{
+    text-align: center;
+}
+.text_right{
+    text-align: right;
+    margin-right : 30px;
+}
+i{font-size : 20px;}
+
+body{
+    font-family: 'B612';font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right:30px;
+}
+.title-container{
+    margin-bottom : 60px;
+}
+.title{
+    font-size : 64px;
+}
+.subtitle{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 32px;
+}
+.example{
+    font-style: italic;
+    color: forestgreen;
+    font-size: 0.7em;
+    margin:30px;
+    
+}
+.divider-title{
+    text-decoration: underline;
+    font-size : 30px;
+    font-weight: bold;
+}
+.subdivider-title{
+    margin-bottom : 20px;
+    margin-top: 30px;
+    font-size : 24px;
+    font-weight:bold;
+}
+.photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.figure{
+    font-size : 0.7em;
+    font-style:italic;
+    color:gray;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.example-content{
+    margin-bottom: 100px;
+}
+.example-core{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin : 30px;
+    text-align:justify;
+}
+.end-scene{
+    font-size:32px;
+    margin:30px;
+
+}
+
+
+</style>
+</head>
+<body>
+<div class="title-container">
+<div class="title">TP 3 – Nous sommes des critiques</div>
+<div class="subtitle"> L'art de critiquer des interfaces</div>
+</div>
+<div class = "divider-title">Chapitre 1 : Les 3 étapes d'une critique de Pro </div>
+<ol>
+    <li><div>Trouver une erreur de design. La nommer à l'aide d'une définition d'élément de découvrabilité.
+    Expliquer Brièvement le problème lié à celui-ci.    </div>
+    <div class="critic-container">
+        <div class="example">
+            Exemple : "Ce signifiant est trop petit !"
+        </div>
+        <img src="/ift2905/assets/assets_vc/s3_img1.png" width="75%"/>
+        <div class="figure">Figure 1 : Le signifiant qu'on critique est entouré en rouge</div>
+    </div>
+    </li>
+    <li>
+        Expliquer en quoi l'élément de découvrabilité nuit à un concept d'utilisabilité (citer un ou deux concepts d'utilisabilité).
+        <div class="example">
+       <div>Exemple : "Ce signifiant est trop petit ! (1)</div>
+       <div>Il peut donc entraver l'efficience du site web. En effet, selon la loi de Fitts, le temps moyen pour atteindre une cible est proportionnel au ratio distance/largeur." (2)</div> 
+    </div>
+    </li>
+    <li>
+        (optionnel) Faire un lien avec le persona (l'utilisateur cible), comment celui-ci sera impacté par ce défaut de design.
+        <div class="example">
+        <div>Exemple COMPLET : "Ce signifiant est trop petit ! (1)</div>
+       <div>Il peut donc entraver l'efficience du site web. En effet, selon la loi de Fitts, le temps moyen pour atteindre une cible est proportionnel au ratio distance/largeur." (2)</div> 
+       <div>Gabriel (défini plus bas) pourrait ressentir de la frustration à l'idée de perdre du temps pour cliquer correctement sur le bouton." (3)</div>
+    </div>
+    </li>
+</ol>
+<div class="photo">
+<img src="/ift2905/assets/assets_vc/s3_img2.png" width="60%"/>
+<div class="figure"> Figure 2 : Photo d'archive de la correctrice qui détecte une critique bien formulée à l'intra (2023, colorized)</div>
+</div>
+
+<div class="divider-title">
+Chapitre 2 : Qui est Gabriel ? 
+</div>
+<div>
+    Un persona est un personnage fictif inventé par le designer correspondant à un utilisateur ciblé par le site web/logiciel
+</div>
+<div class="example">
+    Exemple : "Gabriel est un étudiant en sciences naturelles au cégep de 18 ans vivant à Joliette. Étant un mordu d'informatique, il recherche sa future université afin de poursuivre un bacc en informatique. Il s'informe donc sur les différents sites d'admission des universités du Québec."
+</div>
+<div>En processus de création d'interface, il est commun de définir plusieurs personas distincts, qui chacun représente une partition de l'ensemble des utilisateurs potentiels de la dite interface.</div>
+<div>Ainsi, il est toujours intéressant lors d'une critique de se référer aux personas définis afin de rapprocher les erreurs de design avec le point de vue de l'utilisateur.</div>
+
+<div class="divider-title">
+    Chapitre 3 : Exemples de critique
+</div>
+<ol>
+    <li class="example-content">
+        <div class="subdivider-title">Exemple 1 : Zara </div>
+        <img src="/ift2905/assets/assets_vc/s3_img3.png" width="100%"/>
+        <div class="figure">Figure 3 : <a href="https://www.zara.com/ca/">Le site Zara Canada</a></div>
+        <div class="example-core">
+        <div>1. Les signifiants associés à la barre de navigation en bas à droite est très difficile à lire.</div>
+        <div>En effet, le très faible contrastre entre le fond d'écran et ces signifiants affecte grandement la VISIBILITÉ de l'interface.</div>
+        <div>Un utilisateur pourrait définitivement prendre un instant avant de trouver cette barre de navigation, ce qui impacte l'EFFICIENCE du modèle de design</div>
+    </div>
+<div class="example-core">
+        <div>2. L'utilité du menu déroulable en haut à gauche est inutile. L'accessibilité aux affordances de la barre en bas à droite est dupliquée dans ce menu, ce qui créer une SURCHARGE de signifiants. </div>
+        <div>Dupliquer l'accès à la même fonctionalité à deux endroits distincts d'une même page affecte la CLARTÉ de l'interface.</div>
+        <div>Un utilisateur peut assurément se sentir CONFUS à l'idée de perçevoir un bouton inutile sur cet interface.</div>
+    </div>
+    </li>
+    <li class="example-content"> 
+        <div class="subdivider-title">Exemple 2 : Wayfair </div>
+        <img src="/ift2905/assets/assets_vc/s3_img4.png" width="100%"/>
+        <div class="figure">Figure 4 : <a href="https://www.wayfair.ca/">Le site Wayfair canada</a></div>
+        <div class="example-core">
+        <div>1. Il y a trop d'affordances visibles dans la barre de navigation en haut du site web.</div>
+        <div>Comme vu en classe, la surabondance de signifiant dans une interface peut grandement affecter la VISIBILITÉ du site web. </div>
+        <div>Cette lacune de l'hiérarchisation des affordances a égalment un impact négatif sur la SIMPLICITÉ D'APPRENTISSAGE du site.</div>
+        <div>Un utilisateur qui arrive pour la première fois sur ce site peut se sentir PERDU devant cette surabondance de choix.</div>
+    </div>
+    <div class="example-core">
+        <div>2. Il est commun de placer le signifiant "accès à mon compte" en haut à droite de l'écran</div>
+        <div>Le positionnement de ce signifiant sur l'interface est problématique, en ce sens qu'il va intuilement à contre-sens des habitudes des utilisateurs</div>
+        <div>En effet, un utilisateur peut oublier constamment que l'accès à son compte se situe à cet endroit, ce qui constitue un problème de MÉMORABILITÉ du site web.</div>
+    </div>
+
+    </li>
+</ol>
+<div class="divider-title">Chapitre 4 : À L'horizon</div>
+<div>La semaine prochaine, nous nous attarderons plus en détail sur comment améliorer un prototype à partir des erreurs de design détecté sur une interface.</div>
+<div>Je vous partage ici l'exemple présenté en classe d'un exemple d'amélioration d'une interface. Il s'agit de l'amélioration du prototype affiché en Figure 1. Plus de détails au TP4.</div>
+<div class="subdivider-title">Avant le méchant changement :</div>
+<img src="/ift2905/assets/assets_vc/s3_img6.png"/>
+<div class="figure">Figure 5 : Page d'admission universitaire à améliorer</div>
+
+<div class="subdivider-title">Après le méchant changement : </div>
+<img src="/ift2905/assets/assets_vc/s3_img5.png"/>
+<div class="figure">Figure 6 : Page d'admission universitaire améliorée</div>
+<div class="end-scene">"Nous sommes des critiques" est FERMÉ</div>
+</body>
+</html>
