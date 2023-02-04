@@ -2,6 +2,18 @@
 
 <hr/>
 
+# Microdevoir 2 
+
+* Disponible sur studium 
+* à remettre le 27 janvier, 23h59 
+* L'écran du protoype figma à critiquer est bel et bien le <u>premier</u> écran que l'on voit sur le prototype: 
+
+![image-3](assets/image-3.png)
+
+_____
+
+
+
 <img src="assets/Screenshot 2023-01-26 at 2.52.23 AM.png" width="70%">
 
 [Le meilleur achat que vous pourrez faire de votre vie*](https://www.amazon.ca/Design-Everyday-Things-Revised-Expanded/dp/0465050654/ref=sr_1_1?crid=3RQRDAW4EJKQJ&keywords=the+design+of+everyday+things&qid=1674719680&sprefix=the+design+of+ever%2Caps%2C93&sr=8-1)
