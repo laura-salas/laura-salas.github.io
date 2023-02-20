@@ -218,6 +218,14 @@
             projects_lang_toggle = temp_projects;
             experience_lang_toggle = temp_exp;
             cv_lang_toggle = temp_cv;
+            
+            let finally_hover = document.getElementById('finally');
+            finally_hover.addEventListener('mouseenter', function(){  
+                startConfetti();
+            }); 
+            finally_hover.addEventListener('mouseleave', function(){ 
+                stopConfetti();
+            }); 
         } 
 
     </script>
