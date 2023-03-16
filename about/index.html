@@ -12,8 +12,9 @@
     <link rel="icon" href="cat.ico">
 </head>
 
-<body>
+<body> 
     <div class="centre" id="main-container">
+        
         <div class="texty">
             <a id="lang" onclick="toggle_lang()">English</a>
             <h1 class="texte_centre customy"> Laura Elisa Salas </h1>
@@ -22,7 +23,7 @@
 
                 <b>Étudiante à:</b> l'Université de Montréal <br>
                 <b>Programme:</b> BSc. Informatique <br>
-                <b>Graduation: </b> Mai 2023 <br><br>
+                <b>Graduation: </b><b id="finally">Mai 2023</b><br><br>
 
                 <b>Aires d'intérêt: </b> Le traitement de la langue naturel, l'ingénierie logiciel, le dévelopement d'interfaces à la fois esthétiques et utilisables, la modélisation 3D et le graphisme
             </p>
@@ -40,8 +41,40 @@
                 </svg></a>
 
 
-            <a class="svgi" title="CV - Laura Salas" href="LAURA_SALAS_CV_FEV22-2.pdf" target="_blank"><span style="font-size: 1.7em; font-weight: 500;">CV</span></a>
+            <a id="cv-link" class="svgi" title="CV - Laura Salas" href="FRENCH_LAURA_SALAS_CV_NOV_22.pdf" target="_blank"><span style="font-size: 1.7em; font-weight: 500;">CV</span></a>
         </div>
+        <div style="padding-top: 0;" id="experience">
+            <h2> Expérience Professionnelle</h2>
+            <p><i>Pour plus de détails, vous trouverez mon CV <a href="FRENCH_LAURA_SALAS_CV_NOV_22.pdf" target="_blank">ici</a></i></p>
+            <h3>Facebook Inc.</h3> 
+                <div style="display: flex; justify-content: space-between; width:100%;">
+                    <span> Stagiaire en Dévelopement Logiciel (Full-stack) </span>
+                    <span class="texte_rose">Mai 2022 - Août 2022</span>
+                </div>   
+                <div style="display: flex; justify-content: space-between; width:100%;">
+                    <span> Stagiaire en Dévelopement Logiciel (Full-stack) </span>
+                    <span class="texte_rose">Mai 2021 - Août 2021</span>
+                </div>    
+            <br/> 
+            <h3>Collineo Inc.</h3> 
+            <div style="display: flex; justify-content: space-between; width:100%;">
+                <span> Stagiaire en Dévelopement Logiciel (Desktop) </span>
+                <span class="texte_rose">Juillet 2020 - Mai 2021</span>
+            </div>    
+            <br/> 
+            <h3>Université de Montréal</h3> 
+            <h4> Laboratoire d'Informatique Théorique et Quantique (LITQ) </h4>
+            <div style="display: flex; justify-content: space-between; width:100%;">
+                <span> Stagiaire de Recherche </span>
+                <span class="texte_rose">Juillet 2019 - Août 2019</span>
+            </div>   
+            <h4>Laboratoire de Recherche Appliquée en Linguistique Informatique (RALI)</h4>
+            <div style="display: flex; justify-content: space-between; width:100%;">
+                <span> Stagiaire de Recherche </span>
+                <span class="texte_rose">Juin 2019 - Juillet 2019</span>
+            </div>    
+        </div>
+        <br/><br/>
         <div style="padding-top: 0;" id="projets">
             <h2> Projets </h2>
             <ul class="justifier">
@@ -57,28 +90,56 @@
 
             </ul>
 
-            <p id="updated" class="texte_centre"><i>Dernière mise à jour: Février 2022</i></p>
+            <p id="updated" class="texte_centre"><i>Dernière mise à jour: Février 2023</i></p>
         </div>
-
-
-
+        <br/><br/>
     </div>
-
-
-
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="confetti.js"></script>
     <script>
+        let cv_lang_toggle = "LAURA_SALAS_CV_FEV22-2.pdf"
         let intro_lang_toggle = `
         <img src="loors.jpeg" style="margin: 0 20px 5px 10px; float: left; border-radius: 20px;" alt="photo laura salas">
 
 
         <b>Student at:</b> University of Montreal <br>
         <b>Program:</b> BSc. Computer Science <br>
-        <b>Graduation: </b> May 2023 <br><br>
+        <b>Graduation: </b><b id="finally"> May 2023</b> <br><br>
 
         <b>Areas of interest </b> Natural Language Processing (NLP), software engineering, developing both user-friendly and functional UIs, 3D modelling, graphic design.
         `
-
+        let experience_lang_toggle = `
+        <h2> Professional Experience</h2>
+        <p><i>For more details, check out my CV <a href="LAURA_SALAS_CV_FEV22-2.pdf" target="_blank">here</a></i></p>
+            <h3>Facebook Inc.</h3> 
+                <div style="display: flex; justify-content: space-between; width:100%;">
+                    <span> Software Engineering Intern (Full-stack) </span>
+                    <span class="texte_rose">May 2022 - August 2022</span>
+                </div>   
+                <div style="display: flex; justify-content: space-between; width:100%;">
+                    <span> Software Engineering Intern (Full-stack) </span>
+                    <span class="texte_rose">May 2021 - August 2021</span>
+                </div>    
+            <br/> 
+            <h3>Collineo Inc.</h3> 
+            <div style="display: flex; justify-content: space-between; width:100%;">
+                <span> Software Engineering Intern (Desktop) </span>
+                <span class="texte_rose">July 2020 - May 2021</span>
+            </div>    
+            <br/> 
+            <h3>University of Montreal</h3> 
+            <h4> Quantum and Theoretical Computing Lab </h4>
+            <div style="display: flex; justify-content: space-between; width:100%;">
+                <span> Research Intern </span>
+                <span class="texte_rose">July 2019 - August 2019</span>
+            </div>   
+            <h4> Applied Research in Linguistics Informatics (NLP) Lab </h4>
+            <div style="display: flex; justify-content: space-between; width:100%;">
+                <span> Research Intern </span>
+                <span class="texte_rose">June 2019 - July 2019</span>
+            </div>    
+        `;
         let projects_lang_toggle = `
         <h2> Projects </h2>
         <ul class="justifier">
@@ -93,7 +154,7 @@
             <li>Exploration of the Stanford Question Answering Database (NLP) 1.1 (2019)</li>
 
         </ul>
-            <p id="updated" class="texte_centre"><i>Last website update: February 2022</i></p>
+            <p id="updated" class="texte_centre"><i>Last website update: February 2023</i></p>
         `
 
         function changeOnResize() {
@@ -113,14 +174,26 @@
             }
 
         }
+
+ 
         window.onload = function() {
             var language = window.navigator.userLanguage || window.navigator.language;
             if (language.includes("en")) {
                 toggle_lang();
             }
             changeOnResize();
-            window.addEventListener('resize', changeOnResize);
+            window.addEventListener('resize', changeOnResize); 
 
+            /* confetti effect made by Bharath C Hegde
+            Github repo: https://github.com/acb123web/Confetti-Animation
+            all thanks to him for helping me celebrate my eventual graduation ^-^ */
+            let finally_hover = document.getElementById('finally');
+            finally_hover.addEventListener('mouseenter', function(){  
+                startConfetti();
+            }); 
+            finally_hover.addEventListener('mouseleave', function(){ 
+                stopConfetti();
+            }); 
         }
 
         function toggle_lang() {
@@ -132,15 +205,29 @@
                 lang.innerHTML = "Français";
                 document.documentElement.setAttribute('lang', 'en');
             }
+            let temp_cv = document.getElementById('cv-link').href;
             let temp_intro = document.getElementById('intro').innerHTML;
             let temp_projects = document.getElementById('projets').innerHTML;
+            let temp_exp = document.getElementById('experience').innerHTML;
 
+            document.getElementById('cv-link').href = cv_lang_toggle;
             document.getElementById('intro').innerHTML = intro_lang_toggle;
             document.getElementById('projets').innerHTML = projects_lang_toggle;
+            document.getElementById('experience').innerHTML = experience_lang_toggle;
             intro_lang_toggle = temp_intro;
             projects_lang_toggle = temp_projects;
+            experience_lang_toggle = temp_exp;
+            cv_lang_toggle = temp_cv;
+            
+            let finally_hover = document.getElementById('finally');
+            finally_hover.addEventListener('mouseenter', function(){  
+                startConfetti();
+            }); 
+            finally_hover.addEventListener('mouseleave', function(){ 
+                stopConfetti();
+            }); 
+        } 
 
-        }
     </script>
 
 </body>
