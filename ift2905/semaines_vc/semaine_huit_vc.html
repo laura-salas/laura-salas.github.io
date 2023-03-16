@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=B612' rel='stylesheet'>
+<title>Demonstration 8</title>
+<style>
+h2{
+    color: #283618;
+}
+h1{
+    color : #bc6c25;
+    text-align: center;
+}
+li{
+    list-style-type: none
+}
+.written_content{
+    color : #606c38;
+    font-size: 24px;
+}
+.text_center{
+    text-align: center;
+}
+.text_right{
+    text-align: right;
+    margin-right : 30px;
+}
+i{font-size : 20px;}
+
+body{
+    font-family: 'B612';font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+
+    text-align: center;
+    width:100%;
+}
+.title-container{
+    width:100%;
+    margin-bottom : 60px;
+    background-color: #003566;
+    color : #f4f1de;
+}
+.title{
+    width:100%;
+    font-size : 64px;
+
+    font-weight: bold;
+}
+.subtitle{
+    width:100%;
+    font-style: italic;
+    font-weight: bold;
+    color:#FF8811;
+    font-size: 32px;
+}
+.example{
+    font-style: italic;
+    color: forestgreen;
+    font-size: 0.7em;
+    margin:30px;
+    
+}
+.divider-title{
+    padding:10px;
+    margin-left:15%;
+    margin-right:15%;
+    font-size : 38px;
+    font-weight: bold;
+    background-color: #003566;
+    color : #f4f1de;
+}
+.subdivider-title{
+    margin-bottom : 20px;
+    margin-top: 30px;
+    font-size : 24px;
+    font-weight:bold;
+}
+.photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.figure{
+    font-size : 0.7em;
+    font-style:italic;
+    color:gray;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.example-content{
+    margin-bottom: 100px;
+}
+.example-core{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin : 30px;
+    text-align:justify;
+}
+.end-scene{
+    font-size:32px;
+    margin:30px;
+
+}
+.bold{
+    font-weight:bold;  
+    color : #003566;
+}
+.bold-orange{
+    font-weight:bold;  
+    color :#FF6632;
+}
+.bold-pink{
+    font-size: 28px;
+    font-weight:bold;  
+    color :#FD46B2;
+    background-color: #FF6632;
+    -webkit-text-stroke-width: 0.01px;
+    -webkit-text-stroke-color: #f4f1de;
+    margin-left: 30%;
+    margin-right:30%;
+    padding:10px;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-weight: bolder;
+    background-color: #ffc300;
+    color:#001d3d;
+    margin-left:30%;
+    margin-right:30%;
+    padding: 20px;
+}
+.list{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap : 10px;
+}
+.separator{
+    margin : 100px;
+}
+.mini-separator{
+    margin : 30px;
+}
+.divider-title-orange{
+    margin-left:15%;
+    margin-right:15%;
+    font-size : 38px;
+    font-weight:bold;
+    background-color: #FD46B2;
+    color : #FF6632; 
+    -webkit-text-stroke-width: 0.01px;
+  -webkit-text-stroke-color: #f4f1de;
+  padding:10px;
+}
+.quote{
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:15px;
+    font-style: italic;
+    font-size:30px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding:25px;
+}
+.content{
+    margin-left: 10%;
+    margin-right:10%;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="title-container">
+<div class="title">TP 8</div>
+<div class="subtitle"> Une once d'observation raisonnée vaut plus qu'une tonne de songes</div>
+</div>
+<div class = "divider-title">Chapitre 1 : Les méthodes d'observation </div>
+<div>
+    Présentons ici où nos concepts vus en cours se situent dans le royaume des expériences :
+</div>
+<div>
+   <img src="/ift2905/assets/assets_vc/experience-tree.png" width="70%">
+</div >
+
+<div class="content">
+        <div>
+            <div class="subtitle">observation simple</div>
+            <div>
+                L'utilisateur fait la tâche sans expliquer verbalement son schéma de pensée à chaque étape.
+            </div>
+            <div class="mini-separator"></div>
+            <div>POSITIF : Moins de pression sur l'utilisateur, expérience plus 'naturelle', résulte à moins de biais/erreurs liés au stress</div>
+            <div class="mini-separator"></div>
+            <div>NÉGATIF : On manque de l'information crucial sur la construction du modèle mental de l'utilisateur</div>
+            <div class="mini-separator"></div>
+            <div>CONCLUSION (avis perso) : Je ne recommande pas, car les pertes d'informations sur le modèle mental sont trop imosantes comparativement à la réduction du biais lié au stress. </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div>
+            <div class="subtitle">observation à voix haute</div>
+            <div>L'utilisateur fait la tâche en expliquant verbalement son schéma de pensée à chaque étape.</div>
+            <div class="mini-separator"></div>
+            <div>POSITIF : Beaucoup d'information gagnée sur la conception du modèle mental de l'utilisateur</div>
+            <div class="mini-separator"></div>
+            <div>NÉGATIF : Biais supplémentaire lié à la pression/au stress généré sur l'utilisateur, dénature la tâche (le réel utilisateur de notre produit final ne commenterait pas chaque étape)</div>
+            <div class="mini-separator"></div>
+            <div>CONCLUSION (perso) : Approche très solide, car je considère que le gain d'information sur le modèle mental surpasse les problèmes de biais par le stress et par la dénaturation.</div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div>
+            <div class="subtitle">observation à deux utilisateurs</div>
+            <div>Deux utilisateurs complétent les même tâches en coopération</div>
+            <div class="mini-separator"></div>
+            <div>POSITIF : Conserve l'information sur le modèle mental ET réduction du biais lié au stress (être en équipe moins stressant qu'être seul)</div>
+            <div class="mini-separator"></div>
+            <div>NÉGATIF : Dénature grandement la tâche : deux utilisateurs qui se complémentent sur la tâche risque de faire beaucoup moins d'erreur en moyenne que s'ils étaient seuls. -> biais de dénaturation</div>
+            <div class="mini-separator"></div>
+            <div>CONCLUSION (perso) : Je ne recommande pas, car le biais de dénaturation est trop fort, entrave notre compréhension du modèle mentale pour un unique utilisateur. </div>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div>CONCLUSION FINALE personnelle : Observation voix haute MVP. </div>
+    <div>à noter que le choix du type d'observation est libre d'interprétation. Si vous utilisez une observation simple sur la base de bons arguments, alors ALL GOOD !</div>
+
+    <div class="separator"></div>
+
+    <div class = "divider-title">Chapitre 2 : Concevoir un modèle conceptuel </div>
+    <div class="content">
+    <div>D'ici la fin de la page, nous supposeront que nous possédont un site web d'une salle d'exposition d'art. Celle-ci possède une page principale, une page des expositions passées et futures, une billetterie en ligne ainsi qu'une page à propos.</div>
+    <div>Voici une méthode solide en 4 étapes pour extraire le modèle conceptuel de notre site de salle d'exposition</div>
+    <div>
+        <div class="separator"></div>
+        <div class="subtitle">1. Décrire les actions faisables sur le site web</div>
+        <div class="mini-separator"></div>
+        <div>Je recommande de faire cette étape en bullet list, bien que d'autres représentations sont possibles. Exemple : </div>
+        <ul>
+            <li>Créer/connecter à un compte</li>
+            <li>Recherche des expositions futures</li>
+            <li>Recherche des expositions passées</li>
+            <li>Réserver un billet en ligne</li>
+            <li>Page à propos, concernant les objectifs de la salle, son historique, etc.</li>
+            <li>Liens au numéro de téléphone et courriel</li>
+        </ul>
+    </div>
+    <div>
+        <div class="separator"></div>
+        <div class="subtitle">2. Décrire les relations entre les objets de l'interface, ainsi que leurs propriétés respectives.</div>
+        <div class="mini-separator"></div>
+        <div>Je recommande de décrire ces relations à l'aide d'un DIAGRAMME, où les pages sont les objets principaux, et leurs contenus sont des attributs. Exemple : </div>
+        <div class="separator"></div>
+        <div>Exemple 1 de diagramme relationnel </div>
+        <img src="/ift2905/assets/assets_vc/conceptual-model.png" width="90%">
+        <div class="separator"></div>
+        <div>Exemple 2 donné dans les diapos</div>
+        <a href="https://miro.com/app/board/uXjVOE1J7h0=/">(LIEN MIRO)</a>
+    </div>
+    <div>
+        <div class="separator"></div>
+        <div class="subtitle">3 (moins important).  </div>
+        <div class="subtitle">Décrire les types d'intéractions qui a lieu sur le site web. Vous pouvez également intégrer des actions ici</div>
+        <div class="mini-separator"></div>
+        <div class="written_content">Exemple : "L'utilisateur sera en mesure d'explorer les différentes expositions. Les expos futures seront placées en listes défilantes. En cliquant sur une expo, l'utilisateur sera en mesure de lire plus en profondeur les détails de l'expo."</div>
+    </div>
+    <div>
+        <div class="separator"></div>
+        <div class="subtitle"> 4. (moins important) . Méthaphores</div>
+        <div class="mini-separator"></div>
+        <div class="written_content">Exemple calendrier : "En choisissant une date, l'utilisateur sélectionnera une date dans un CALENDRIER VIRTUEL, qui est une métaphore d'un calendrier physique (voir photo suivante)</div>
+        <img src="/ift2905/assets/assets_vc/Métaphore calendrier.png" width="60%">
+    </div>
+</div>
+<div class="separator"></div>
+
+
+<div class = "divider-title">Chapitre 3 : extras </div>
+<div class="subtitle">Enregistrer le vidéo de l'expérience :</div>
+<a href="https://support.apple.com/en-ca/guide/mac-help/mh26782/mac">Mac</a>
+<a href="https://www.tomshardware.com/how-to/screen-record-in-windows">Windows</a>
+<div>Ensuite, partagez le fichier vidéo sur Youtube en version non répertoriée, puis collez le lien sur votre pdf de remise.</div>
+
+<div class="separator"></div>
+<div class="subtitle">Yet another example : Persona et Tâches</div>
+<div>
+    <div>N'oubliez pas : </div>
+    <div>1. LIENS ENTRE PERSONNAGES ET TÂCHES</div>
+    <div>2. AUCUN LIEN AVEC QUELCONQUE INTERFACE</div>
+</div>
+<div>Exemple : Création d'une plateforme pour une salle d'exposition d'art</div>
+<div class="content">
+    <div class="written_content">Persona (Moi) : Vincent est un étudiant en informatique. Possédant une voiture, celui-ci aime planifier l'emplacement de son parking avant d'aller à un endroit. Ayant un horaire chargé la semaine, il préfère toujours planifier ses activités la fin de semaine. De plus, ayant un budget limité, il est toujours ravi lorsqu'une activité lui permet un rabais étudiant. Finalement, étant en couple, il aime bien faire ses activités avec sa copine. Il a donc l'habitude de réserver ses activités pour 2 personnes.</div>
+    <div class="separator"></div>
+    <div class="written_content">
+
+    Tâche 1 :
+    Vincent souhaite réserver deux billets pour l'exposition d'art inuit de samedi prochain. Vincent entre l'URL du site dans son moteur de recherche. Dirigé sur la page principale du site, il sélectionne le menu exposition -> prochainement. Il recherche sur cette page l'entrée "art inuit". Il lit la description et, s'étant assuré que c'est l'exposition qu'il recherchait, il séléctionne "commander des billets".
+    
+    Étant donné son horaire chargé, il séléctionne unr représentation le samedi prochain. Ayant confirmation qu'il reste de la place à cette plage horaire, il sélectionne 2 billets, puis confirme son choix. Sur le menu de paiement, enjoué de sauver de l'argent, il séléctionne l'option " billets étudiants". Ensuite, il entre ses informations bancaires, et confirme l'achat. Une confirmation d'achat lui est ensuite envoyé à son courriel. Vincent Pourra donc profiter de l'exposition samedi prochain avec sa copine !
+</div> 
+<div class="separator"></div>
+ <div class="written_content">
+    Tâche 2 :
+    Avant de partir, Vincent souhaite savoir s'il y aura un stationnement à proximité de la salle d'exposition, ...(suite)...
+</div>
+    </div>
+<div class="separator"></div>
+</body>
+</html>
