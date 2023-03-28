@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=B612' rel='stylesheet'>
+<title>Demonstration 9</title>
+<style>
+h2{
+    color: #283618;
+}
+h1{
+    color : #bc6c25;
+    text-align: center;
+}
+li{
+  margin-bottom: 15px;
+}
+.written_content{
+    color : #d05f0f;
+    font-size: 24px;
+    font-weight: bold;
+}
+.text_center{
+    text-align: center;
+}
+.text_right{
+    text-align: right;
+    margin-right : 30px;
+}
+i{font-size : 20px;}
+
+body{
+    font-family: 'B612';font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+
+    text-align: center;
+    width:100%;
+}
+.title-container{
+    width:100%;
+    margin-bottom : 60px;
+    background-color: #003566;
+    color : #f4f1de;
+}
+.title{
+    width:100%;
+    font-size : 64px;
+
+    font-weight: bold;
+}
+.subtitle{
+    width:100%;
+    font-style: italic;
+    font-weight: bold;
+    color:#FF8811;
+    font-size: 32px;
+}
+.example{
+    font-style: italic;
+    color: forestgreen;
+    font-size: 0.7em;
+    margin:30px;
+    
+}
+.divider-title{
+    padding:10px;
+    margin-left:15%;
+    margin-right:15%;
+    font-size : 38px;
+    font-weight: bold;
+    background-color: #003566;
+    color : #f4f1de;
+}
+.subdivider-title{
+    margin-bottom : 20px;
+    margin-top: 30px;
+    font-size : 24px;
+    font-weight:bold;
+}
+.photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.figure{
+    font-size : 0.7em;
+    font-style:italic;
+    color:gray;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.example-content{
+    margin-bottom: 100px;
+}
+.example-core{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin : 30px;
+    text-align:justify;
+}
+.end-scene{
+    font-size:32px;
+    margin:30px;
+
+}
+.bold{
+    font-weight:bold;  
+    color : #003566;
+}
+.bold-orange{
+    font-weight:bold;  
+    color :#FF6632;
+}
+.bold-pink{
+    font-size: 28px;
+    font-weight:bold;  
+    color :#FD46B2;
+    background-color: #FF6632;
+    -webkit-text-stroke-width: 0.01px;
+    -webkit-text-stroke-color: #f4f1de;
+    margin-left: 30%;
+    margin-right:30%;
+    padding:10px;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-weight: bolder;
+    background-color: #ffc300;
+    color:#001d3d;
+    margin-left:30%;
+    margin-right:30%;
+    padding: 20px;
+}
+.list{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap : 10px;
+}
+.separator{
+    margin : 100px;
+}
+.mini-separator{
+    margin : 30px;
+}
+.divider-title-orange{
+    margin-left:15%;
+    margin-right:15%;
+    font-size : 38px;
+    font-weight:bold;
+    background-color: #FD46B2;
+    color : #FF6632; 
+    -webkit-text-stroke-width: 0.01px;
+  -webkit-text-stroke-color: #f4f1de;
+  padding:10px;
+}
+.quote{
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:15px;
+    font-style: italic;
+    font-size:30px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding:25px;
+}
+.content{
+    margin-left: 10%;
+    margin-right:10%;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="title-container">
+<div class="title">TP 9</div>
+<div class="subtitle">Nos vies ne sont qu’un bout d’essai. <br/>Pour qui, pourquoi, Dieu seul le sait </div>
+</div>
+<div class = "divider-title">Chapitre 1 : Le parcours cognitif </div>
+<div>
+C'est simplement un outil, une méthode, pour tester une interface d'un point de vue de la découvrabilité.
+</div>
+
+<div>
+    Le parcours cognitif correspond à définir une tâche, puis itérer sur 3 questions clés qu'on se pose à chaque sous-tâche, pour évaluer le comportement potentiel qu'un utilisateur pourrait adopter en complétant la tâche définie.
+</div>
+
+<div class="content">
+        <div>
+            <div class="subtitle">Question 1 : Savoir quoi faire</div>
+            <div>
+               Avoir une idée de l'action à produire pour se rapprocher de son objectif
+            </div>
+            <div class="mini-separator"></div>
+            <div>Trouve les problèmes de <span class="written_content">suppositions irréalistes</span> sur le niveau de connaissance d'un nouvel utilisateur
+            <div class="mini-separator"></div>
+            <div><span class="written_content">CURSE OF KNOWLEDGE :</span> connaître une information rend difficile la tâche de s'imaginer dans la peau de quelqu'un qui ne la connaît pas.
+            <div class="mini-separator"></div>
+            <img src="/ift2905/assets/assets_vc/exemple vaio.png" width="350px">
+            <div class="figure">Les concepteurs ont fait l'hypothèse irréaliste qu'un nouvel utilisateur saurait que 'Stamina' économise la batterie et 'Speed' active pleinement la carte graphique.</div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div>
+            <div class="subtitle">Question 2 : Savoir comment le faire</div>
+            <div>Est-ce que le <span class='written_content'>signifiant</span> pour compléter l'action de Q1 est visible ?</div>
+            <div class="mini-separator"></div>
+            <div>Identifie les problèmes de mauvais signifiants OU de mauvaise structure des objets sur l'interface</div>
+            <div class="mini-separator"></div>
+            <img src="/ift2905/assets/assets_vc/remote control.png" width="350px">
+            <div class="figure">On a besoin de retirer le couvercle en plastique pour afficher certaines fonctionalités -> mauvais signifiants.</div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div>
+            <div class="subtitle">Question 3 : Comprendre la réponse</div>
+            <div>Identifier les problèmes de mauvais feedback, voire de feedback inexistant</div>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class = "divider-title">Chapitre 2 : Feuille de codage </div>
+    <div class="mini-separator"></div>
+    <div class="content">
+    <div>Il s'agit simplement de la feuille que remplira l'observateur lors d'une expérience</div>
+    <div>Voici les informations que doit contenir une bonne feuille de codage</div>
+    <div>
+        <ol>
+            <li><span class="written_content">Temporalité :</span> combien de temps l'utilisateur a pris pour accomplir une tâche/sous-tâche ?</li>
+            <li><span class="written_content">Les erreurs :</span> Noter toutes les erreurs faites par l'utilisateur, noter le type d'erreur ainsi que la sous-tâche associée à l'erreur</li>
+            <li><span class="written_content">Le comportement dans la vraie vie de l'utilisateur :</span> semble-t-il stressé? satisfait? quelles questions a-t-il posé? À quel moment?</li>
+            <li><span class="written_content">Dimensions de la feuille :</span> relative au temps espéré qu'un utilisateur prendra pour accomplir l'expérience. 1 page suffit pour une expérience de moins de 5 minutes.</li>
+            <li><span class="written_content">Bonne idée :</span> séparer sa feuille de codage selon les sous-tâches de l'expérience.</li>
+        </ol>
+    </div>
+
+</div>
+<div class="separator"></div>
+</body>
+</html>
